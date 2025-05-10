@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrition Consultant | مشاور تغذیه</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap');
+        
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        body.en {
+            direction: ltr;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+        }
+        
+        .hidden-language {
+            display: none;
+        }
+        
+        .active-language {
+            display: block;
+        }
+        
+        .consultation-btn {
+            background: linear-gradient(90deg, #3b82f6, #10b981);
+            transition: all 0.3s ease;
+        }
+        
+        .consultation-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Selection Modal -->
+    <div id="language-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div class="bg-white rounded-lg p-8 max-w-md w-full mx-4">
+            <h2 class="text-2xl font-bold text-center mb-8">Please select your language / لطفا زبان خود را انتخاب کنید</h2>
+            <div class="flex flex-col space-y-4">
+                <button onclick="selectLanguage('en')" class="bg-blue-500 text-white py-3 px-6 rounded-lg text-lg font-medium hover:bg-blue-600 transition flex items-center justify-center">
+                    <i class="fas fa-language mr-2"></i> English
+                </button>
+                <button onclick="selectLanguage('fa')" class="bg-green-500 text-white py-3 px-6 rounded-lg text-lg font-medium hover:bg-green-600 transition flex items-center justify-center">
+                    <i class="fas fa-language mr-2"></i> فارسی
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Persian Content -->
+    <div id="fa-content" class="hidden-language">
+        <!-- Navigation -->
+        <nav class="fixed w-full bg-white shadow-md z-40">
+            <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold text-green-600">مشاور تغذیه</a>
+                <div class="hidden md:flex space-x-8 space-x-reverse">
+                    <a href="#home" class="text-gray-700 hover:text-green-600 transition">خانه</a>
+                    <a href="#about" class="text-gray-700 hover:text-green-600 transition">درباره من</a>
+                    <a href="#articles" class="text-gray-700 hover:text-green-600 transition">مقالات</a>
+                    <a href="#research" class="text-gray-700 hover:text-green-600 transition">علایق پژوهشی</a>
+                    <a href="#skills" class="text-gray-700 hover:text-green-600 transition">مهارت‌ها</a>
+                    <a href="#contact" class="text-gray-700 hover:text-green-600 transition">تماس</a>
+                    <button onclick="changeLanguage('en')" class="text-blue-500 hover:text-blue-700 transition">
+                        English <i class="fas fa-exchange-alt mr-1"></i>
+                    </button>
+                </div>
+                <button id="mobile-menu-button-fa" class="md:hidden text-gray-700 focus:outline-none">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            <!-- Mobile menu -->
+            <div id="mobile-menu-fa" class="hidden md:hidden bg-white py-2 px-4 shadow-lg">
+                <a href="#home" class="block py-2 text-gray-700 hover:text-green-600 transition">خانه</a>
+                <a href="#about" class="block py-2 text-gray-700 hover:text-green-600 transition">درباره من</a>
+                <a href="#articles" class="block py-2 text-gray-700 hover:text-green-600 transition">مقالات</a>
+                <a href="#research" class="block py-2 text-gray-700 hover:text-green-600 transition">علایق پژوهشی</a>
+                <a href="#skills" class="block py-2 text-gray-700 hover:text-green-600 transition">مهارت‌ها</a>
+                <a href="#contact" class="block py-2 text-gray-700 hover:text-green-600 transition">تماس</a>
+                <button onclick="changeLanguage('en')" class="block w-full text-left py-2 text-blue-500 hover:text-blue-700 transition">
+                    English <i class="fas fa-exchange-alt mr-1"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section id="home" class="gradient-bg text-white pt-32 pb-20">
+            <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">سلام، من <span class="text-yellow-300">دکتر سارا احمدی</span> هستم</h1>
+                    <h2 class="text-2xl md:text-3xl font-semibold mb-6">مشاور تخصصی تغذیه و رژیم درمانی</h2>
+                    <p class="text-lg mb-8 leading-relaxed">با بیش از 10 سال تجربه در زمینه تغذیه و رژیم‌درمانی. متخصص در طراحی برنامه‌های غذایی شخصی‌سازی شده برای شرایط مختلف سلامتی.</p>
+                    <div class="flex space-x-4 space-x-reverse">
+                        <a href="#consultation" class="bg-white text-green-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition">درخواست مشاوره</a>
+                        <a href="#articles" class="border-2 border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:text-green-600 transition">مقالات علمی</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="دکتر سارا احمدی" class="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover border-4 border-white shadow-xl">
+                        <div class="absolute -bottom-4 -left-4 bg-yellow-400 text-gray-800 px-4 py-2 rounded-lg font-bold shadow-lg">10+ سال تجربه</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-16">درباره <span class="text-green-600">من</span></h2>
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/3 mb-10 md:mb-0 flex justify-center">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="دکتر سارا احمدی" class="w-64 h-64 rounded-lg object-cover shadow-lg">
+                    </div>
+                    <div class="md:w-2/3 md:pr-10">
+                        <h3 class="text-2xl font-semibold mb-4">سوابق حرفه‌ای</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            دکتر سارا احمدی، فارغ‌التحصیل دکترای تغذیه از دانشگاه علوم پزشکی تهران با بیش از 10 سال سابقه فعالیت در زمینه مشاوره تغذیه و رژیم درمانی. عضو انجمن تغذیه ایران و دارای گواهینامه‌های معتبر بین‌المللی در زمینه تغذیه ورزشی و تغذیه کودکان.
+                        </p>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            تجربه کاری در بیمارستان‌های معتبر تهران و مراکز تغذیه تخصصی. تخصص اصلی در زمینه تغذیه در بیماری‌های متابولیک، چاقی، لاغری و تغذیه ورزشکاران حرفه‌ای.
+                        </p>
+                        <div class="grid grid-cols-2 gap-6 mt-8">
+                            <div>
+                                <p class="font-semibold"><span class="text-green-600 mr-2">مدرک:</span> دکترای تغذیه</p>
+                                <p class="font-semibold"><span class="text-green-600 mr-2">تخصص:</span> رژیم درمانی</p>
+                            </div>
+                            <div>
+                                <p class="font-semibold"><span class="text-green-600 mr-2">ایمیل:</span> sara.nutrition@example.com</p>
+                                <p class="font-semibold"><span class="text-green-600 mr-2">محل کار:</span> تهران، کلینیک تخصصی تغذیه</p>
+                            </div>
+                        </div>
+                        <div class="mt-8">
+                            <a href="#" class="bg-green-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-green-700 transition inline-flex items-center">
+                                <i class="fas fa-download ml-2"></i> دانلود رزومه کامل
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Articles Section -->
+        <section id="articles" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-16">مقالات <span class="text-green-600">تخصصی</span></h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Article 1 -->
+                    <div class="article-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                        <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="مقاله تغذیه سالم" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <span class="text-sm text-green-600 font-medium">تغذیه عمومی</span>
+                            <h3 class="text-xl font-semibold my-3">10 اصل طلایی برای تغذیه سالم در زندگی روزمره</h3>
+                            <p class="text-gray-600 mb-4">راهکارهای ساده اما مؤثر برای بهبود کیفیت تغذیه در زندگی پرمشغله امروزی که می‌تواند سلامت عمومی شما را ارتقا دهد.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-500">15 مرداد 1402</span>
+                                <a href="#" class="text-green-600 font-medium inline-flex items-center">
+                                    مطالعه مقاله <i class="fas fa-arrow-left mr-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Article 2 -->
+                    <div class="article-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="مقاله تغذیه ورزشی" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <span class="text-sm text-blue-600 font-medium">تغذیه ورزشی</span>
+                            <h3 class="text-xl font-semibold my-3">برنامه غذایی بهینه برای ورزشکاران استقامتی</h3>
+                            <p class="text-gray-600 mb-4">بررسی نیازهای تغذیه‌ای خاص ورزشکاران استقامتی و راهکارهای علمی برای بهبود عملکرد و ریکاوری.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-500">5 تیر 1402</span>
+                                <a href="#" class="text-green-600 font-medium inline-flex items-center">
+                                    مطالعه مقاله <i class="fas fa-arrow-left mr-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Article 3 -->
+                    <div class="article-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                        <img src="https://images.unsplash.com/photo-1471864190281-a93a3070b6de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="مقاله دیابت" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <span class="text-sm text-purple-600 font-medium">تغذیه در بیماری‌ها</span>
+                            <h3 class="text-xl font-semibold my-3">مدیریت تغذیه در بیماران دیابتی نوع 2</h3>
+                            <p class="text-gray-600 mb-4">راهکارهای عملی برای کنترل قند خون از طریق تغذیه مناسب و الگوی غذایی صحیح در بیماران دیابتی.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-500">20 اردیبهشت 1402</span>
+                                <a href="#" class="text-green-600 font-medium inline-flex items-center">
+                                    مطالعه مقاله <i class="fas fa-arrow-left mr-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-12">
+                    <a href="#" class="bg-green-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-green-700 transition inline-flex items-center">
+                        مشاهده همه مقالات <i class="fas fa-arrow-left mr-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Interests Section -->
+        <section id="research" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-16">علایق <span class="text-green-600">پژوهشی</span></h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-sm">
+                        <div class="text-green-600 text-4xl mb-4">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">تغذیه و بیماری‌های متابولیک</h3>
+                        <p class="text-gray-600">
+                            پژوهش در زمینه نقش تغذیه در پیشگیری و مدیریت بیماری‌های متابولیک مانند دیابت، چاقی و کبد چرب. بررسی تأثیر رژیم‌های غذایی مختلف بر شاخص‌های متابولیک.
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-sm">
+                        <div class="text-blue-600 text-4xl mb-4">
+                            <i class="fas fa-running"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">تغذیه ورزشی</h3>
+                        <p class="text-gray-600">
+                            مطالعه نیازهای تغذیه‌ای ورزشکاران در رشته‌های مختلف و تأثیر مکمل‌های غذایی بر عملکرد ورزشی. توسعه پروتکل‌های تغذیه‌ای برای بهبود ریکاوری و عملکرد.
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-sm">
+                        <div class="text-purple-600 text-4xl mb-4">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">تغذیه گیاهی</h3>
+                        <p class="text-gray-600">
+                            بررسی تأثیر رژیم‌های گیاهخواری بر سلامت عمومی و مدیریت بیماری‌ها. توسعه راهکارهای عملی برای تأمین نیازهای تغذیه‌ای در رژیم‌های گیاهی.
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-sm">
+                        <div class="text-yellow-600 text-4xl mb-4">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">تغذیه و سلامت روان</h3>
+                        <p class="text-gray-600">
+                            پژوهش در زمینه ارتباط بین رژیم غذایی و سلامت روان. بررسی تأثیر مواد مغذی خاص بر عملکرد شناختی و اختلالات خلقی مانند افسردگی و اضطراب.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-16">مهارت‌های <span class="text-green-600">تخصصی</span></h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-6">مهارت‌های بالینی</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">ارزیابی وضعیت تغذیه‌ای</span>
+                                    <span class="text-gray-600">95%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-green-600 h-2.5 rounded-full" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">طراحی برنامه غذایی شخصی‌سازی شده</span>
+                                    <span class="text-gray-600">90%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-green-600 h-2.5 rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">مشاوره تغذیه در بیماری‌های خاص</span>
+                                    <span class="text-gray-600">85%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-green-600 h-2.5 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-6">مهارت‌های نرم‌افزاری</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">نرم‌افزارهای تحلیل رژیم (Nutritics)</span>
+                                    <span class="text-gray-600">90%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-blue-600 h-2.5 rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">SPSS (تحلیل آماری)</span>
+                                    <span class="text-gray-600">80%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-blue-600 h-2.5 rounded-full" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">Excel (مدیریت داده‌های تغذیه‌ای)</span>
+                                    <span class="text-gray-600">85%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-blue-600 h-2.5 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Consultation Section -->
+        <section id="consultation" class="py-20 bg-gradient-to-r from-green-500 to-blue-500 text-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold mb-6">درخواست مشاوره تغذیه</h2>
+                <p class="text-xl mb-10 max-w-2xl mx-auto">برای دریافت برنامه غذایی شخصی‌سازی شده متناسب با شرایط و نیازهای شما، فرم درخواست مشاوره را تکمیل کنید.</p>
+                <a href="#contact" class="consultation-btn text-white px-8 py-4 rounded-full text-lg font-bold inline-block">
+                    دریافت نوبت مشاوره <i class="fas fa-calendar-check mr-2"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-16">تماس با <span class="text-green-600">من</span></h2>
+                <div class="flex flex-col md:flex-row gap-10">
+                    <div class="md:w-1/2">
+                        <h3 class="text-2xl font-semibold mb-6">اطلاعات تماس</h3>
+                        <p class="text-gray-600 mb-8 leading-relaxed">
+                            برای دریافت مشاوره تخصصی تغذیه یا سوالات مربوط به مقالات و پژوهش‌ها، می‌توانید از طریق اطلاعات زیر با من در ارتباط باشید.
+                        </p>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-green-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-map-marker-alt text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">آدرس مطب</h4>
+                                    <p class="text-gray-600">تهران، خیابان ولیعصر، کوچه فلانی، پلاک 12، کلینیک تخصصی تغذیه</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-green-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-envelope text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">ایمیل</h4>
+                                    <p class="text-gray-600">sara.nutrition@example.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-green-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-phone-alt text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">تلفن</h4>
+                                    <p class="text-gray-600">+98 21 1234 5678</p>
+                                    <p class="text-gray-600">+98 912 345 6789 (موبایل)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-10">
+                            <h4 class="font-semibold mb-4">ساعات کاری</h4>
+                            <p class="text-gray-600">شنبه تا چهارشنبه: 9 صبح تا 5 بعدازظهر</p>
+                            <p class="text-gray-600">پنجشنبه: 9 صبح تا 1 بعدازظهر</p>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2">
+                        <form class="bg-gray-50 p-8 rounded-lg shadow-sm">
+                            <div class="mb-6">
+                                <label for="name-fa" class="block text-gray-700 font-medium mb-2">نام شما</label>
+                                <input type="text" id="name-fa" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="نام و نام خانوادگی">
+                            </div>
+                            <div class="mb-6">
+                                <label for="email-fa" class="block text-gray-700 font-medium mb-2">ایمیل</label>
+                                <input type="email" id="email-fa" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="example@domain.com">
+                            </div>
+                            <div class="mb-6">
+                                <label for="phone-fa" class="block text-gray-700 font-medium mb-2">تلفن همراه</label>
+                                <input type="tel" id="phone-fa" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="09123456789">
+                            </div>
+                            <div class="mb-6">
+                                <label for="subject-fa" class="block text-gray-700 font-medium mb-2">موضوع</label>
+                                <select id="subject-fa" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                                    <option value="">موضوع را انتخاب کنید</option>
+                                    <option value="consultation">درخواست مشاوره تغذیه</option>
+                                    <option value="question">سوال علمی</option>
+                                    <option value="research">همکاری پژوهشی</option>
+                                    <option value="other">سایر</option>
+                                </select>
+                            </div>
+                            <div class="mb-6">
+                                <label for="message-fa" class="block text-gray-700 font-medium mb-2">پیام شما</label>
+                                <textarea id="message-fa" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="متن پیام..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-green-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-green-700 transition">
+                                ارسال پیام
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 text-white py-12">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="mb-6 md:mb-0">
+                        <a href="#" class="text-2xl font-bold text-green-400">مشاور تغذیه</a>
+                        <p class="mt-2 text-gray-400">تخصص، تجربه و تعهد در خدمت سلامت شما</p>
+                    </div>
+                    <div class="flex space-x-6 space-x-reverse">
+                        <a href="#" class="text-gray-400 hover:text-green-400 transition">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-green-400 transition">
+                            <i class="fab fa-telegram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-green-400 transition">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-green-400 transition">
+                            <i class="fab fa-researchgate text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                    <p>© 1402 تمامی حقوق محفوظ است. طراحی و توسعه توسط تیم فنی کلینیک تغذیه</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Back to Top Button -->
+        <button id="back-to-top-fa" class="fixed bottom-8 left-8 bg-green-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </div>
+
+    <!-- English Content -->
+    <div id="en-content" class="hidden-language">
+        <!-- Navigation -->
+        <nav class="fixed w-full bg-white shadow-md z-40">
+            <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold text-green-600">Nutrition Consultant</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-green-600 transition">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-green-600 transition">About</a>
+                    <a href="#articles" class="text-gray-700 hover:text-green-600 transition">Articles</a>
+                    <a href="#research" class="text-gray-700 hover:text-green-600 transition">Research</a>
+                    <a href="#skills" class="text-gray-700 hover:text-green-600 transition">Skills</a>
+                    <a href="#contact" class="text-gray-700 hover:text-green-600 transition">Contact</a>
+                    <button onclick="changeLanguage('fa')" class="text-blue-500 hover:text-blue-700 transition">
+                        فارسی <i class="fas fa-exchange-alt ml-1"></i>
+                    </button>
+                </div>
+                <button id="mobile-menu-button-en" class="md:hidden text-gray-700 focus:outline-none">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            <!-- Mobile menu -->
+            <div id="mobile-menu-en" class="hidden md:hidden bg-white py-2 px-4 shadow-lg">
+                <a href="#home" class="block py-2 text-gray-700 hover:text-green-600 transition">Home</a>
+                <a href="#about" class="block py-2 text-gray-700 hover:text-green-600 transition">About</a>
+                <a href="#articles" class="block py-2 text-gray-700 hover:text-green-600 transition">Articles</a>
+                <a href="#research" class="block py-2 text-gray-700 hover:text-green-600 transition">Research</a>
+                <a href="#skills" class="block py-2 text-gray-700 hover:text-green-600 transition">Skills</a>
+                <a href="#contact" class="block py-2 text-gray-700 hover:text-green-600 transition">Contact</a>
+                <button onclick="changeLanguage('fa')" class="block w-full text-left py-2 text-blue-500 hover:text-blue-700 transition">
+                    فارسی <i class="fas fa-exchange-alt ml-1"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section id="home" class="gradient-bg text-white pt-32 pb-20">
+            <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Hi, I'm <span class="text-yellow-300">Dr. Sara Ahmadi</span></h1>
+                    <h2 class="text-2xl md:text-3xl font-semibold mb-6">Nutrition & Dietetics Specialist</h2>
+                    <p class="text-lg mb-8 leading-relaxed">With over 10 years of experience in nutrition and diet therapy. Expert in designing personalized meal plans for various health conditions.</p>
+                    <div class="flex space-x-4">
+                        <a href="#consultation" class="bg-white text-green-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition">Book Consultation</a>
+                        <a href="#articles" class="border-2 border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:text-green-600 transition">Read Articles</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Dr. Sara Ahmadi" class="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover border-4 border-white shadow-xl">
+                        <div class="absolute -bottom-4 -right-4 bg-yellow-400 text-gray-800 px-4 py-2 rounded-lg font-bold shadow-lg">10+ Years Experience</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-16">About <span class="text-green-600">Me</span></h2>
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/3 mb-10 md:mb-0 flex justify-center">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Dr. Sara Ahmadi" class="w-64 h-64 rounded-lg object-cover shadow-lg">
+                    </div>
+                    <div class="md:w-2/3 md:pl-10">
+                        <h3 class="text-2xl font-semibold mb-4">Professional Background</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Dr. Sara Ahmadi, PhD in Nutrition from Tehran University of Medical Sciences with over 10 years of experience in nutrition counseling and diet therapy. Member of Iranian Nutrition Society and holder of international certifications in sports nutrition and pediatric nutrition.
+                        </p>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Work experience in prestigious hospitals in Tehran and specialized nutrition centers. Main expertise in nutrition for metabolic diseases, obesity, weight loss, and professional athletes' nutrition.
+                        </p>
+                        <div class="grid grid-cols-2 gap-6 mt-8">
+                            <div>
+                                <p class="font-semibold"><span class="text-green-600 mr-2">Degree:</span> PhD in Nutrition</p>
+                                <p class="font-semibold"><span class="text-green-600 mr-2">Specialty:</span> Diet Therapy</p>
+                            </div>
+                            <div>
+                                <p class="font-semibold"><span class="text-green-600 mr-2">Email:</span> sara.nutrition@example.com</p>
+                                <p class="font-semibold"><span class="text-green-600 mr-2">Clinic:</span> Tehran, Nutrition Specialty Clinic</p>
+                            </div>
+                        </div>
+                        <div class="mt-8">
+                            <a href="#" class="bg-green-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-green-700 transition inline-flex items-center">
+                                <i class="fas fa-download mr-2"></i> Download Full CV
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Articles Section -->
+        <section id="articles" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-16">Scientific <span class="text-green-600">Articles</span></h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Article 1 -->
+                    <div class="article-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                        <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Healthy Nutrition" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <span class="text-sm text-green-600 font-medium">General Nutrition</span>
+                            <h3 class="text-xl font-semibold my-3">10 Golden Rules for Healthy Nutrition in Daily Life</h3>
+                            <p class="text-gray-600 mb-4">Simple but effective strategies to improve nutrition quality in today's busy lifestyle that can enhance your overall health.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-500">August 6, 2023</span>
+                                <a href="#" class="text-green-600 font-medium inline-flex items-center">
+                                    Read Article <i class="fas fa-arrow-right ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Article 2 -->
+                    <div class="article-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Sports Nutrition" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <span class="text-sm text-blue-600 font-medium">Sports Nutrition</span>
+                            <h3 class="text-xl font-semibold my-3">Optimal Meal Plan for Endurance Athletes</h3>
+                            <p class="text-gray-600 mb-4">Examining specific nutritional needs of endurance athletes and scientific strategies for performance enhancement and recovery.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-500">June 26, 2023</span>
+                                <a href="#" class="text-green-600 font-medium inline-flex items-center">
+                                    Read Article <i class="fas fa-arrow-right ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Article 3 -->
+                    <div class="article-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                        <img src="https://images.unsplash.com/photo-1471864190281-a93a3070b6de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Diabetes" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <span class="text-sm text-purple-600 font-medium">Nutrition in Diseases</span>
+                            <h3 class="text-xl font-semibold my-3">Nutrition Management in Type 2 Diabetes Patients</h3>
+                            <p class="text-gray-600 mb-4">Practical strategies for blood sugar control through proper nutrition and correct dietary patterns in diabetic patients.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-500">May 10, 2023</span>
+                                <a href="#" class="text-green-600 font-medium inline-flex items-center">
+                                    Read Article <i class="fas fa-arrow-right ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-12">
+                    <a href="#" class="bg-green-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-green-700 transition inline-flex items-center">
+                        View All Articles <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Interests Section -->
+        <section id="research" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-16">Research <span class="text-green-600">Interests</span></h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-sm">
+                        <div class="text-green-600 text-4xl mb-4">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Nutrition and Metabolic Diseases</h3>
+                        <p class="text-gray-600">
+                            Research on the role of nutrition in prevention and management of metabolic diseases such as diabetes, obesity and fatty liver. Investigating the impact of different diets on metabolic indicators.
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-sm">
+                        <div class="text-blue-600 text-4xl mb-4">
+                            <i class="fas fa-running"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Sports Nutrition</h3>
+                        <p class="text-gray-600">
+                            Studying nutritional needs of athletes in different sports and the effect of dietary supplements on sports performance. Developing nutritional protocols for improved recovery and performance.
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-sm">
+                        <div class="text-purple-600 text-4xl mb-4">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Plant-Based Nutrition</h3>
+                        <p class="text-gray-600">
+                            Investigating the impact of vegetarian diets on general health and disease management. Developing practical solutions to meet nutritional needs in plant-based diets.
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-sm">
+                        <div class="text-yellow-600 text-4xl mb-4">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Nutrition and Mental Health</h3>
+                        <p class="text-gray-600">
+                            Research on the connection between diet and mental health. Examining the effect of specific nutrients on cognitive function and mood disorders such as depression and anxiety.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-16">Professional <span class="text-green-600">Skills</span></h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-6">Clinical Skills</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">Nutritional Status Assessment</span>
+                                    <span class="text-gray-600">95%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-green-600 h-2.5 rounded-full" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">Personalized Meal Plan Design</span>
+                                    <span class="text-gray-600">90%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-green-600 h-2.5 rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">Nutrition Counseling for Specific Conditions</span>
+                                    <span class="text-gray-600">85%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-green-600 h-2.5 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-6">Software Skills</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">Diet Analysis Software (Nutritics)</span>
+                                    <span class="text-gray-600">90%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-blue-600 h-2.5 rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">SPSS (Statistical Analysis)</span>
+                                    <span class="text-gray-600">80%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-blue-600 h-2.5 rounded-full" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">Excel (Nutrition Data Management)</span>
+                                    <span class="text-gray-600">85%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-blue-600 h-2.5 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Consultation Section -->
+        <section id="consultation" class="py-20 bg-gradient-to-r from-green-500 to-blue-500 text-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold mb-6">Nutrition Consultation</h2>
+                <p class="text-xl mb-10 max-w-2xl mx-auto">To receive a personalized meal plan tailored to your condition and needs, please fill out the consultation request form.</p>
+                <a href="#contact" class="consultation-btn text-white px-8 py-4 rounded-full text-lg font-bold inline-block">
+                    Book a Consultation <i class="fas fa-calendar-check ml-2"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-16">Contact <span class="text-green-600">Me</span></h2>
+                <div class="flex flex-col md:flex-row gap-10">
+                    <div class="md:w-1/2">
+                        <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
+                        <p class="text-gray-600 mb-8 leading-relaxed">
+                            For professional nutrition consultation or questions about articles and research, you can contact me through the following information.
+                        </p>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-green-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-map-marker-alt text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Clinic Address</h4>
+                                    <p class="text-gray-600">Tehran, Valiasr St, Alley, No. 12, Nutrition Specialty Clinic</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-green-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-envelope text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Email</h4>
+                                    <p class="text-gray-600">sara.nutrition@example.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-green-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-phone-alt text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Phone</h4>
+                                    <p class="text-gray-600">+98 21 1234 5678</p>
+                                    <p class="text-gray-600">+98 912 345 6789 (Mobile)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-10">
+                            <h4 class="font-semibold mb-4">Working Hours</h4>
+                            <p class="text-gray-600">Saturday to Wednesday: 9 AM to 5 PM</p>
+                            <p class="text-gray-600">Thursday: 9 AM to 1 PM</p>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2">
+                        <form class="bg-gray-50 p-8 rounded-lg shadow-sm">
+                            <div class="mb-6">
+                                <label for="name-en" class="block text-gray-700 font-medium mb-2">Your Name</label>
+                                <input type="text" id="name-en" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="Full Name">
+                            </div>
+                            <div class="mb-6">
+                                <label for="email-en" class="block text-gray-700 font-medium mb-2">Email</label>
+                                <input type="email" id="email-en" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="example@domain.com">
+                            </div>
+                            <div class="mb-6">
+                                <label for="phone-en" class="block text-gray-700 font-medium mb-2">Phone</label>
+                                <input type="tel" id="phone-en" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="09123456789">
+                            </div>
+                            <div class="mb-6">
+                                <label for="subject-en" class="block text-gray-700 font-medium mb-2">Subject</label>
+                                <select id="subject-en" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                                    <option value="">Select Subject</option>
+                                    <option value="consultation">Nutrition Consultation</option>
+                                    <option value="question">Scientific Question</option>
+                                    <option value="research">Research Collaboration</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="mb-6">
+                                <label for="message-en" class="block text-gray-700 font-medium mb-2">Your Message</label>
+                                <textarea id="message-en" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="Your message..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-green-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-green-700 transition">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 text-white py-12">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="mb-6 md:mb-0">
+                        <a href="#" class="text-2xl font-bold text-green-400">Nutrition Consultant</a>
+                        <p class="mt-2 text-gray-400">Expertise, Experience and Commitment in Service of Your Health</p>
+                    </div>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-green-400 transition">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-green-400 transition">
+                            <i class="fab fa-telegram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-green-400 transition">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-green-400 transition">
+                            <i class="fab fa-researchgate text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                    <p>© 2023 All Rights Reserved. Designed & Developed by Nutrition Clinic Technical Team</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Back to Top Button -->
+        <button id="back-to-top-en" class="fixed bottom-8 right-8 bg-green-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </div>
+
+    <script>
+        // Language Selection
+        function selectLanguage(lang) {
+            document.getElementById('language-modal').style.display = 'none';
+            document.body.classList.add(lang === 'en' ? 'en' : 'rtl');
+            document.getElementById(lang + '-content').classList.add('active-language');
+            localStorage.setItem('selectedLanguage', lang);
+        }
+        
+        function changeLanguage(lang) {
+            document.querySelector('.active-language').classList.remove('active-language');
+            document.body.classList.toggle('en');
+            document.body.classList.toggle('rtl');
+            document.getElementById(lang + '-content').classList.add('active-language');
+            localStorage.setItem('selectedLanguage', lang);
+        }
+        
+        // Check for previously selected language
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('selectedLanguage');
+            if (savedLang) {
+                selectLanguage(savedLang);
+            }
+            
+            // Mobile menu toggle for Persian
+            document.getElementById('mobile-menu-button-fa').addEventListener('click', () => {
+                document.getElementById('mobile-menu-fa').classList.toggle('hidden');
+            });
+            
+            // Mobile menu toggle for English
+            document.getElementById('mobile-menu-button-en').addEventListener('click', () => {
+                document.getElementById('mobile-menu-en').classList.toggle('hidden');
+            });
+            
+            // Back to top button for Persian
+            window.addEventListener('scroll', () => {
+                const backToTopFa = document.getElementById('back-to-top-fa');
+                const backToTopEn = document.getElementById('back-to-top-en');
+                
+                if (window.pageYOffset > 300) {
+                    if (backToTopFa) backToTopFa.classList.remove('opacity-0', 'invisible');
+                    if (backToTopEn) backToTopEn.classList.remove('opacity-0', 'invisible');
+                } else {
+                    if (backToTopFa) backToTopFa.classList.add('opacity-0', 'invisible');
+                    if (backToTopEn) backToTopEn.classList.add('opacity-0', 'invisible');
+                }
+            });
+            
+            // Smooth scrolling for all links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menus if open
+                        const mobileMenuFa = document.getElementById('mobile-menu-fa');
+                        const mobileMenuEn = document.getElementById('mobile-menu-en');
+                        
+                        if (mobileMenuFa && !mobileMenuFa.classList.contains('hidden')) {
+                            mobileMenuFa.classList.add('hidden');
+                        }
+                        
+                        if (mobileMenuEn && !mobileMenuEn.classList.contains('hidden')) {
+                            mobileMenuEn.classList.add('hidden');
+                        }
+                    }
+                });
+            });
+            
+            // Back to top button functionality
+            document.getElementById('back-to-top-fa')?.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            document.getElementById('back-to-top-en')?.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
