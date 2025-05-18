@@ -1,211 +1,115 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sara Kashkooli - Nutrition Specialist</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>سارا کشکولی - متخصص تغذیه</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css">
     <style>
         :root {
-            --primary-color: #2C6566;    /* رنگ سبز آبی */
-            --secondary-color: #88B14B;  /* سبز روشن */
-            --accent-color: #F4B860;     /* نارنجی طلایی */
-            --text-color: #3E4A5E;
+            --primary: #2C6566;
+            --secondary: #88B14B;
+            --accent: #F4B860;
+            --text: #3E4A5E;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', sans-serif;
-            scroll-behavior: smooth;
+            font-family: Vazirmatn, sans-serif;
         }
 
         body {
             background: #f8f9fa;
-            color: var(--text-color);
             line-height: 1.8;
+            padding-top: 100px;
         }
 
-        /* بقیه استایل‌ها مانند قبل باقی میماند... */
-        
-        .nutrition-card {
-            background: white;
-            padding: 30px;
-            margin-bottom: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
-            display: grid;
-            grid-template-columns: 100px 1fr;
-            gap: 25px;
-            align-items: center;
-        }
-
-        .certification-badge {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: var(--secondary-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .header {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
             color: white;
-            font-size: 1.5rem;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid white;
+            margin-bottom: 1rem;
+        }
+
+        .nav {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            padding: 1rem;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 70px;
+            width: 100%;
+        }
+
+        .nav button {
+            padding: 0.5rem 1rem;
+            border: none;
+            background: var(--secondary);
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .section {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
         }
     </style>
 </head>
 <body>
-    <div class="lang-switcher">
-        <button class="lang-btn active" onclick="changeLanguage('en')">EN</button>
-        <button class="lang-btn" onclick="changeLanguage('fa')">FA</button>
-    </div>
-
     <header class="header">
-        <div class="nav-icons">
-            <div class="nav-icon" onclick="scrollToSection('research')">
-                <i class="fas fa-book-open"></i>
-            </div>
-            <div class="nav-icon" onclick="scrollToSection('experience')">
-                <i class="fas fa-flask"></i>
-            </div>
-            <div class="nav-icon" onclick="scrollToSection('skills')">
-                <i class="fas fa-apple-alt"></i>
-            </div>
-            <div class="nav-icon" onclick="scrollToSection('contact')">
-                <i class="fas fa-address-card"></i>
-            </div>
-        </div>
-        <img src="sara-profile.jpg" alt="Sara Kashkooli" class="profile-img">
-        <h1>Sara Kashkooli</h1>
-        <p>Nutrition Specialist | Clinical Dietitian</p>
+        <img src="./images/profile.jpg" class="profile-img" alt="Sara Kashkooli">
+        <h1>سارا کشکولی</h1>
+        <p>متخصص تغذیه و رژیم درمانی</p>
     </header>
 
-    <div class="tabs-container">
-        <div class="tabs">
-            <button class="tab-btn active" onclick="scrollToSection('research')">Research & Publications</button>
-            <button class="tab-btn" onclick="scrollToSection('experience')">Professional Experience</button>
-            <button class="tab-btn" onclick="scrollToSection('skills')">Specialized Skills</button>
-            <button class="tab-btn" onclick="scrollToSection('contact')">Contact</button>
+    <nav class="nav">
+        <button onclick="showSection('research')">مقالات</button>
+        <button onclick="showSection('experience')">سوابق</button>
+        <button onclick="showSection('contact')">تماس</button>
+    </nav>
+
+    <section id="research" class="section">
+        <div class="card">
+            <h2>مقالات منتشر شده</h2>
+            <p>مقاله اول: تأثیر رژیم مدیترانه‌ای بر سلامت قلبی</p>
         </div>
-    </div>
-
-    <div class="content-container">
-        <!-- Research Section -->
-        <section id="research" class="tab-content active">
-            <h2 class="section-title" data-translate="researchTitle">Research & Publications</h2>
-            <div class="nutrition-card">
-                <div class="certification-badge">
-                    <i class="fas fa-book"></i>
-                </div>
-                <div>
-                    <h3 data-translate="pub1">Nutritional Interventions in Diabetes Management</h3>
-                    <p data-translate="pub1desc">Journal of Clinical Nutrition - 2023</p>
-                    <p data-translate="pub1details">A comprehensive study on dietary approaches for type 2 diabetes patients</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section id="experience" class="tab-content">
-            <h2 class="section-title" data-translate="experienceTitle">Professional Experience</h2>
-            <div class="nutrition-card">
-                <div class="certification-badge">
-                    <i class="fas fa-hospital"></i>
-                </div>
-                <div>
-                    <h3 data-translate="exp1">Senior Dietitian - Tehran Medical Center</h3>
-                    <p data-translate="exp1duration">2020-Present</p>
-                    <ul data-translate="exp1details">
-                        <li>Managed clinical nutrition programs for 500+ patients</li>
-                        <li>Developed personalized meal plans for chronic diseases</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="tab-content">
-            <h2 class="section-title" data-translate="skillsTitle">Specialized Skills</h2>
-            <div class="nutrition-card">
-                <div class="certification-badge">
-                    <i class="fas fa-chart-pie"></i>
-                </div>
-                <div>
-                    <h3 data-translate="skill1">Dietary Assessment & Planning</h3>
-                    <div class="skill-meter">
-                        <div class="skill-progress" style="width: 95%"></div>
-                    </div>
-                    <p data-translate="skill1tools">Tools: NutriBase, DietMaster, SPSS</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="tab-content">
-            <h2 class="section-title" data-translate="contactTitle">Contact Information</h2>
-            <div class="contact-grid">
-                <div class="contact-card">
-                    <i class="fas fa-envelope fa-2x" style="color: var(--secondary-color);"></i>
-                    <h4 data-translate="email">Email</h4>
-                    <p>s.kashkooli@nutrition.ac.ir</p>
-                </div>
-                <div class="contact-card">
-                    <i class="fab fa-linkedin fa-2x" style="color: var(--secondary-color);"></i>
-                    <h4 data-translate="linkedin">LinkedIn</h4>
-                    <p><a href="https://linkedin.com/in/sara-kashkooli-188708190" target="_blank">linkedin.com/in/sara-kashkooli</a></p>
-                </div>
-                <div class="contact-card">
-                    <i class="fas fa-graduation-cap fa-2x" style="color: var(--secondary-color);"></i>
-                    <h4 data-translate="researchgate">ResearchGate</h4>
-                    <p><a href="https://www.researchgate.net/profile/Sara-Kashkooli" target="_blank">researchgate.net/profile/Sara-Kashkooli</a></p>
-                </div>
-            </div>
-        </section>
-    </div>
+    </section>
 
     <script>
-        // ترجمه‌ها به فارسی
-        const translations = {
-            en: {
-                researchTitle: "Research & Publications",
-                pub1: "Nutritional Interventions in Diabetes Management",
-                pub1desc: "Journal of Clinical Nutrition - 2023",
-                pub1details: "A comprehensive study on dietary approaches for type 2 diabetes patients",
-                experienceTitle: "Professional Experience",
-                exp1: "Senior Dietitian - Tehran Medical Center",
-                exp1duration: "2020-Present",
-                exp1details: `<li>Managed clinical nutrition programs for 500+ patients</li>
-                              <li>Developed personalized meal plans for chronic diseases</li>`,
-                skillsTitle: "Specialized Skills",
-                skill1: "Dietary Assessment & Planning",
-                skill1tools: "Tools: NutriBase, DietMaster, SPSS",
-                contactTitle: "Contact Information",
-                email: "Email",
-                linkedin: "LinkedIn",
-                researchgate: "ResearchGate"
-            },
-            fa: {
-                researchTitle: "مقالات و تحقیقات",
-                pub1: "مداخلات تغذیه‌ای در مدیریت دیابت",
-                pub1desc: "مجله تغذیه بالینی - ۱۴۰۲",
-                pub1details: "مطالعه جامع در مورد رویکردهای غذایی برای بیماران دیابت نوع ۲",
-                experienceTitle: "سوابق حرفه‌ای",
-                exp1: "کارشناس ارشد تغذیه - مرکز پزشکی تهران",
-                exp1duration: "۱۴۰۰-اکنون",
-                exp1details: `<li>مدیریت برنامه‌های تغذیه بالینی برای بیش از ۵۰۰ بیمار</li>
-                              <li>تدوین برنامه‌های غذایی شخصی‌سازی شده برای بیماری‌های مزمن</li>`,
-                skillsTitle: "مهارت‌های تخصصی",
-                skill1: "ارزیابی و برنامه‌ریزی غذایی",
-                skill1tools: "نرم‌افزارها: ناتری بیس، دایت مستر، اس پی اس اس",
-                contactTitle: "اطلاعات تماس",
-                email: "ایمیل",
-                linkedin: "لینکدین",
-                researchgate: "ریسرچ گیت"
-            }
-        };
-
-        // بقیه اسکریپت‌ها مانند قبل...
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(section => {
+                section.style.display = 'none';
+            });
+            document.getElementById(sectionId).style.display = 'block';
+        }
+        // نمایش بخش اول به صورت پیش‌فرض
+        showSection('research');
     </script>
 </body>
 </html>
