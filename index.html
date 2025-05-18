@@ -69,9 +69,42 @@
             margin-bottom: 0.5rem;
         }
 
-        .position {
-            font-size: 1.4rem;
-            color: #666;
+        /* Image Grid */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 20px;
+        }
+
+        .portfolio-item {
+            position: relative;
+            height: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .portfolio-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            font-size: 1.2rem;
         }
 
         /* Content Sections */
@@ -94,27 +127,18 @@
             border-bottom: 3px solid #2980b9;
         }
 
-        .project-card {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 10px;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-
         @media (max-width: 768px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            
             .nav-menu {
                 gap: 1rem;
                 padding: 1rem;
-                justify-content: space-around;
             }
             
             .profile-section {
                 padding-top: 120px;
-            }
-            
-            .hi-text {
-                font-size: 3rem;
             }
         }
     </style>
@@ -122,10 +146,9 @@
 <body>
     <!-- Navigation -->
     <nav class="nav-menu">
-        <a href="#projects" class="nav-item" onclick="showSection('projects')">Projects</a>
-        <a href="#experience" class="nav-item" onclick="showSection('experience')">Experience</a>
-        <a href="#education" class="nav-item" onclick="showSection('education')">Education</a>
         <a href="#skills" class="nav-item" onclick="showSection('skills')">Skills</a>
+        <a href="#articles" class="nav-item" onclick="showSection('articles')">Articles</a>
+        <a href="#portfolio" class="nav-item" onclick="showSection('portfolio')">Portfolio</a>
     </nav>
 
     <!-- Profile Section -->
@@ -136,42 +159,49 @@
         <p class="position">Licensed Architect | 10+ Years Experience</p>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section active">
-        <h2 class="section-title">Featured Projects</h2>
-        <div class="project-card">
-            <h3>Modern Urban Complex</h3>
-            <p>2023 | New York, USA</p>
-            <p>50,000 sqm mixed-use development with sustainable design features...</p>
+    <!-- Image Grid -->
+    <div class="portfolio-grid">
+        <div class="portfolio-item" 
+             style="background-image: url('skills-image.jpg')"
+             onclick="showSection('skills')">
+            <div class="portfolio-label">Professional Skills</div>
         </div>
-        <!-- Add more projects -->
+
+        <div class="portfolio-item"
+             style="background-image: url('articles-image.jpg')"
+             onclick="showSection('articles')">
+            <div class="portfolio-label">Research Articles</div>
+        </div>
+
+        <div class="portfolio-item"
+             style="background-image: url('portfolio-image.jpg')"
+             onclick="showSection('portfolio')">
+            <div class="portfolio-label">Project Portfolio</div>
+        </div>
+    </div>
+
+    <!-- Content Sections -->
+    <section id="skills" class="section active">
+        <h2 class="section-title">Professional Skills</h2>
+        <div class="project-card">
+            <h3>Technical Expertise</h3>
+            <p>AutoCAD • Revit • 3D Modeling • Sustainable Design • Project Management</p>
+        </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="section">
-        <h2 class="section-title">Professional Experience</h2>
+    <section id="articles" class="section">
+        <h2 class="section-title">Published Articles</h2>
         <div class="project-card">
-            <h3>Senior Architect - XYZ Architects</h3>
-            <p>2018-Present | Leading design teams for commercial projects...</p>
-        </div>
-        <!-- Add more experiences -->
-    </section>
-
-    <!-- Education Section -->
-    <section id="education" class="section">
-        <h2 class="section-title">Education</h2>
-        <div class="project-card">
-            <h3>M.Arch - Harvard University</h3>
-            <p>2010-2013 | Focus on Sustainable Architecture</p>
+            <h3>Modern Urban Architecture</h3>
+            <p>2023 | Journal of Architectural Design</p>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section">
-        <h2 class="section-title">Technical Skills</h2>
+    <section id="portfolio" class="section">
+        <h2 class="section-title">Project Portfolio</h2>
         <div class="project-card">
-            <h3>Software Proficiency</h3>
-            <p>AutoCAD, Revit, SketchUp, 3ds Max, Adobe Creative Suite</p>
+            <h3>Skyline Tower Complex</h3>
+            <p>2024 | Mixed-use development in Dubai</p>
         </div>
     </section>
 
