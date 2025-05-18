@@ -3,123 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Haley Duster - Blogger</title>
+    <title>Haley Duster - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Helvetica Neue', sans-serif;
+            font-family: 'Segoe UI', sans-serif;
         }
 
         body {
-            background: #f5f5f5;
+            background: #f9f9f9;
             color: #333;
-            line-height: 1.6;
-            min-height: 100vh;
+        }
+
+        /* Top Icons */
+        .social-icons {
+            position: fixed;
+            top: 20px;
+            right: 30px;
+            z-index: 1000;
             display: flex;
-            flex-direction: column;
+            gap: 15px;
         }
 
-        .hero {
+        .social-icon {
+            font-size: 1.5rem;
+            color: #555;
+            transition: color 0.3s;
+        }
+
+        .social-icon:hover {
+            color: #000;
+        }
+
+        /* Profile Section */
+        .profile-header {
             text-align: center;
-            padding: 8rem 2rem 4rem;
-            background: linear-gradient(45deg, #ffffff, #f8f9fa);
-            border-bottom: 1px solid rgba(0,0,0,0.1);
+            padding: 120px 20px 80px;
+            position: relative;
         }
 
-        .name {
-            font-size: 3.5rem;
-            font-weight: 300;
-            letter-spacing: -0.05em;
-            margin-bottom: 1rem;
-            opacity: 0;
-            animation: fadeInUp 1s ease forwards;
-        }
-
-        .title {
-            font-size: 1.2rem;
-            color: #666;
-            font-weight: 400;
-            opacity: 0;
-            animation: fadeInUp 1s ease 0.3s forwards;
-        }
-
-        .content {
-            max-width: 800px;
-            margin: 4rem auto;
-            padding: 0 2rem;
-            flex: 1;
-        }
-
-        .blog-preview {
+        .profile-container {
+            display: inline-flex;
+            align-items: center;
+            gap: 40px;
             background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            margin-bottom: 2rem;
-            transform: translateY(20px);
-            opacity: 0;
-            animation: cardEntry 1s ease 0.6s forwards;
+            padding: 30px 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
-        @keyframes cardEntry {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .hi-text {
+            font-size: 4.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            opacity: 0.9;
         }
 
-        footer {
+        /* Menu Grid */
+        .menu-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .menu-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s;
             text-align: center;
-            padding: 2rem;
-            background: #fff;
-            margin-top: auto;
-            border-top: 1px solid rgba(0,0,0,0.1);
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .menu-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .menu-icon {
+            font-size: 2.5rem;
+            color: #2980b9;
+            margin-bottom: 15px;
+        }
+
+        .menu-title {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .menu-desc {
+            color: #666;
+            line-height: 1.6;
         }
 
         @media (max-width: 768px) {
-            .name {
-                font-size: 2.5rem;
+            .profile-container {
+                flex-direction: column;
+                padding: 30px;
             }
-            
-            .hero {
-                padding: 4rem 1rem;
+
+            .hi-text {
+                font-size: 3rem;
+            }
+
+            .social-icons {
+                right: 15px;
+                top: 15px;
             }
         }
     </style>
 </head>
 <body>
-    <section class="hero">
-        <h1 class="name">Haley Duster</h1>
-        <p class="title">Professional Blogger & Content Creator</p>
-    </section>
+    <!-- Top Social Icons -->
+    <div class="social-icons">
+        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+    </div>
 
-    <main class="content">
-        <article class="blog-preview">
-            <h2>Latest Post Title</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore...</p>
-        </article>
+    <!-- Profile Section -->
+    <header class="profile-header">
+        <div class="profile-container">
+            <img src="YOUR_IMAGE_URL" alt="Profile Photo" class="profile-img">
+            <div class="hi-text">HI</div>
+        </div>
+    </header>
 
-        <article class="blog-preview">
-            <h2>Previous Post Title</h2>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo...</p>
-        </article>
+    <!-- Menu Grid -->
+    <main class="menu-grid">
+        <div class="menu-card">
+            <i class="fas fa-blog menu-icon"></i>
+            <h2 class="menu-title">Blog Posts</h2>
+            <p class="menu-desc">Explore my latest articles and tutorials</p>
+        </div>
+
+        <div class="menu-card">
+            <i class="fas fa-camera menu-icon"></i>
+            <h2 class="menu-title">Photography</h2>
+            <p class="menu-desc">My visual storytelling portfolio</p>
+        </div>
+
+        <div class="menu-card">
+            <i class="fas fa-book-open menu-icon"></i>
+            <h2 class="menu-title">Publications</h2>
+            <p class="menu-desc">Featured articles and collaborations</p>
+        </div>
+
+        <div class="menu-card">
+            <i class="fas fa-envelope menu-icon"></i>
+            <h2 class="menu-title">Contact</h2>
+            <p class="menu-desc">Let's work together</p>
+        </div>
     </main>
-
-    <footer>
-        <p>© 2024 Haley Duster. All rights reserved.</p>
-    </footer>
 </body>
 </html>
