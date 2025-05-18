@@ -3,173 +3,194 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Haley Duster - Portfolio</title>
+    <title>Architect Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', sans-serif;
+            font-family: 'Arial', sans-serif;
         }
 
         body {
-            background: #f9f9f9;
+            background: #ffffff;
             color: #333;
         }
 
-        /* Top Icons */
-        .social-icons {
+        /* Navigation */
+        .nav-menu {
             position: fixed;
-            top: 20px;
-            right: 30px;
+            top: 0;
+            width: 100%;
+            background: #fff;
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             z-index: 1000;
             display: flex;
-            gap: 15px;
+            justify-content: center;
+            gap: 2rem;
         }
 
-        .social-icon {
-            font-size: 1.5rem;
-            color: #555;
-            transition: color 0.3s;
+        .nav-item {
+            font-size: 1.1rem;
+            color: #2c3e50;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s;
         }
 
-        .social-icon:hover {
-            color: #000;
+        .nav-item:hover {
+            background: #f8f9fa;
+            color: #2980b9;
         }
 
         /* Profile Section */
-        .profile-header {
+        .profile-section {
             text-align: center;
-            padding: 120px 20px 80px;
-            position: relative;
-        }
-
-        .profile-container {
-            display: inline-flex;
-            align-items: center;
-            gap: 40px;
-            background: white;
-            padding: 30px 50px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 150px 20px 80px;
         }
 
         .profile-img {
-            width: 150px;
-            height: 150px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
             object-fit: cover;
+            margin-bottom: 1.5rem;
             border: 5px solid #fff;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
         .hi-text {
-            font-size: 4.5rem;
+            font-size: 4rem;
             font-weight: 700;
             color: #2c3e50;
-            opacity: 0.9;
+            margin-bottom: 0.5rem;
         }
 
-        /* Menu Grid */
-        .menu-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .menu-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            transition: transform 0.3s;
-            text-align: center;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-
-        .menu-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .menu-icon {
-            font-size: 2.5rem;
-            color: #2980b9;
-            margin-bottom: 15px;
-        }
-
-        .menu-title {
+        .position {
             font-size: 1.4rem;
-            margin-bottom: 10px;
-            color: #2c3e50;
+            color: #666;
         }
 
-        .menu-desc {
-            color: #666;
-            line-height: 1.6;
+        /* Content Sections */
+        .section {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 2rem;
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid #2980b9;
+        }
+
+        .project-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
 
         @media (max-width: 768px) {
-            .profile-container {
-                flex-direction: column;
-                padding: 30px;
+            .nav-menu {
+                gap: 1rem;
+                padding: 1rem;
+                justify-content: space-around;
             }
-
+            
+            .profile-section {
+                padding-top: 120px;
+            }
+            
             .hi-text {
                 font-size: 3rem;
-            }
-
-            .social-icons {
-                right: 15px;
-                top: 15px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Top Social Icons -->
-    <div class="social-icons">
-        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
-        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
-    </div>
+    <!-- Navigation -->
+    <nav class="nav-menu">
+        <a href="#projects" class="nav-item" onclick="showSection('projects')">Projects</a>
+        <a href="#experience" class="nav-item" onclick="showSection('experience')">Experience</a>
+        <a href="#education" class="nav-item" onclick="showSection('education')">Education</a>
+        <a href="#skills" class="nav-item" onclick="showSection('skills')">Skills</a>
+    </nav>
 
     <!-- Profile Section -->
-    <header class="profile-header">
-        <div class="profile-container">
-            <img src="YOUR_IMAGE_URL" alt="Profile Photo" class="profile-img">
-            <div class="hi-text">HI</div>
-        </div>
-    </header>
+    <section class="profile-section">
+        <img src="YOUR_IMAGE_URL" alt="Profile Photo" class="profile-img">
+        <div class="hi-text">HI</div>
+        <h1>John Architect</h1>
+        <p class="position">Licensed Architect | 10+ Years Experience</p>
+    </section>
 
-    <!-- Menu Grid -->
-    <main class="menu-grid">
-        <div class="menu-card">
-            <i class="fas fa-blog menu-icon"></i>
-            <h2 class="menu-title">Blog Posts</h2>
-            <p class="menu-desc">Explore my latest articles and tutorials</p>
+    <!-- Projects Section -->
+    <section id="projects" class="section active">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="project-card">
+            <h3>Modern Urban Complex</h3>
+            <p>2023 | New York, USA</p>
+            <p>50,000 sqm mixed-use development with sustainable design features...</p>
         </div>
+        <!-- Add more projects -->
+    </section>
 
-        <div class="menu-card">
-            <i class="fas fa-camera menu-icon"></i>
-            <h2 class="menu-title">Photography</h2>
-            <p class="menu-desc">My visual storytelling portfolio</p>
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <h2 class="section-title">Professional Experience</h2>
+        <div class="project-card">
+            <h3>Senior Architect - XYZ Architects</h3>
+            <p>2018-Present | Leading design teams for commercial projects...</p>
         </div>
+        <!-- Add more experiences -->
+    </section>
 
-        <div class="menu-card">
-            <i class="fas fa-book-open menu-icon"></i>
-            <h2 class="menu-title">Publications</h2>
-            <p class="menu-desc">Featured articles and collaborations</p>
+    <!-- Education Section -->
+    <section id="education" class="section">
+        <h2 class="section-title">Education</h2>
+        <div class="project-card">
+            <h3>M.Arch - Harvard University</h3>
+            <p>2010-2013 | Focus on Sustainable Architecture</p>
         </div>
+    </section>
 
-        <div class="menu-card">
-            <i class="fas fa-envelope menu-icon"></i>
-            <h2 class="menu-title">Contact</h2>
-            <p class="menu-desc">Let's work together</p>
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="project-card">
+            <h3>Software Proficiency</h3>
+            <p>AutoCAD, Revit, SketchUp, 3ds Max, Adobe Creative Suite</p>
         </div>
-    </main>
+    </section>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Update active nav item
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            event.currentTarget.classList.add('active');
+        }
+    </script>
 </body>
 </html>
