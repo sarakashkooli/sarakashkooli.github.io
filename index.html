@@ -13,125 +13,234 @@
             font-family: 'Arial', sans-serif;
         }
 
-        /* 🟢 Gradient Header */
+        /* Header Gradient */
         header {
             text-align: center;
-            padding: 4rem 2rem 2rem; /* افزایش padding برای عکس */
+            padding: 6rem 2rem 2rem;
             background: linear-gradient(135deg, #27ae60, #2ecc71);
             position: relative;
         }
 
-        /* 🟢 Profile Image */
         .profile-img {
-            width: 120px;
-            height: 120px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
             border: 4px solid white;
             margin: 0 auto 1.5rem;
-            display: block;
             object-fit: cover;
         }
 
         .name {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             color: white;
-            margin-bottom: 0.5rem;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
 
-        .title {
-            color: #ecf0f1;
-            font-size: 1.2rem;
-        }
-
-        /* 🟢 Navigation with Icons */
+        /* Navigation */
         nav {
-            background: #fff;
+            background: white;
             padding: 1rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
+            z-index: 100;
         }
 
         nav ul {
             display: flex;
             justify-content: center;
+            gap: 4rem;
             list-style: none;
-            gap: 3rem;
         }
 
         nav a {
+            color: #2c3e50;
             text-decoration: none;
-            color: #34495e;
-            font-weight: 500;
-            transition: color 0.3s;
+            font-weight: 600;
+            transition: 0.3s;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.7rem;
         }
 
         nav a i {
-            font-size: 1.1rem;
+            font-size: 1.3rem;
+            color: #27ae60;
         }
 
         nav a:hover {
             color: #27ae60;
+            transform: translateY(-2px);
         }
 
+        /* Sections */
         section {
             padding: 4rem 2rem;
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
-        h2 {
+        .section-title {
+            font-size: 2rem;
             color: #2c3e50;
             margin-bottom: 2rem;
-            border-bottom: 2px solid #27ae60;
-            padding-bottom: 0.5rem;
+            border-left: 5px solid #27ae60;
+            padding-left: 1rem;
         }
 
-        /* 🟢 Gradient Footer */
+        /* Research Section - 14 Articles */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .article-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Experience - 10 Activities */
+        .timeline {
+            border-left: 3px solid #27ae60;
+            padding-left: 2rem;
+        }
+
+        .activity {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        /* Skills & Work History */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .skill-box {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Contact Section */
+        .contact-wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .contact-item {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 15px;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .contact-item i {
+            font-size: 3.5rem;
+            color: #27ae60;
+            margin-bottom: 1rem;
+        }
+
         footer {
             background: linear-gradient(135deg, #27ae60, #2ecc71);
             color: white;
             text-align: center;
-            padding: 1.5rem;
-            margin-top: 3rem;
-        }
-
-        @media (max-width: 768px) {
-            nav ul {
-                gap: 1.5rem;
-                flex-wrap: wrap;
-            }
-            
-            .profile-img {
-                width: 100px;
-                height: 100px;
-            }
+            padding: 2rem;
+            margin-top: 5rem;
         }
     </style>
 </head>
 <body>
     <header>
-        <!-- 🟢 Add Profile Image -->
-        <img src="https://via.placeholder.com/120" alt="Profile" class="profile-img">
+        <img src="profile.jpg" alt="Sara Kashkooli" class="profile-img">
         <h1 class="name">Sara Kashkooli</h1>
         <p class="title">Master of Nutrition & Dietetics</p>
     </header>
 
     <nav>
         <ul>
-            <!-- 🟢 Added Icons -->
-            <li><a href="#research"><i class="fas fa-flask"></i>Research</a></li>
-            <li><a href="#experience"><i class="fas fa-briefcase"></i>Experience</a></li>
-            <li><a href="#skills"><i class="fas fa-tools"></i>Skills</a></li>
-            <li><a href="#contact"><i class="fas fa-envelope"></i>Contact</a></li>
+            <li><a href="#research"><i class="fas fa-book-open"></i>Research</a></li>
+            <li><a href="#experience"><i class="fas fa-chart-line"></i>Experience</a></li>
+            <li><a href="#skills"><i class="fas fa-award"></i>Skills</a></li>
+            <li><a href="#contact"><i class="fas fa-comments"></i>Contact</a></li>
         </ul>
     </nav>
 
-    <!-- سایر بخشها مانند قبل -->
+    <!-- Research Section (14 Articles) -->
+    <section id="research">
+        <h2 class="section-title">Research Publications</h2>
+        <div class="articles-grid">
+            <!-- Repeat 14 times -->
+            <div class="article-card">
+                <h3>Mediterranean Diet & Heart Health</h3>
+                <p>Journal of Clinical Nutrition, 2023</p>
+            </div>
+            <!-- Add 13 more article cards -->
+        </div>
+    </section>
+
+    <!-- Experience Section (10 Activities) -->
+    <section id="experience">
+        <h2 class="section-title">Professional Activities</h2>
+        <div class="timeline">
+            <!-- Repeat 10 times -->
+            <div class="activity">
+                <h3>Nutrition Workshop 2023</h3>
+                <p>International Conference on Dietetics</p>
+            </div>
+            <!-- Add 9 more activities -->
+        </div>
+    </section>
+
+    <!-- Skills & Work History (3 Items) -->
+    <section id="skills">
+        <h2 class="section-title">Skills & Expertise</h2>
+        <div class="skills-container">
+            <!-- Repeat 3 times -->
+            <div class="skill-box">
+                <i class="fas fa-heartbeat"></i>
+                <h3>Clinical Nutrition</h3>
+                <p>10+ years experience</p>
+            </div>
+            <!-- Add 2 more skill boxes -->
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title">Get in Touch</h2>
+        <div class="contact-wrapper">
+            <a href="#" class="contact-item">
+                <i class="fab fa-linkedin"></i>
+                <h3>LinkedIn</h3>
+            </a>
+            <a href="#" class="contact-item">
+                <i class="fab fa-researchgate"></i>
+                <h3>ResearchGate</h3>
+            </a>
+            <a href="mailto:contact@example.com" class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <h3>Email</h3>
+            </a>
+        </div>
+    </section>
 
     <footer>
         <p>© 2024 Sara Kashkooli. All rights reserved.</p>
