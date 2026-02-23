@@ -1,0 +1,122 @@
+:root {
+  --green: #1b4d2e;
+  --gold: #d4af37;
+  --light: #f7f9f8;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  color: #24302a;
+}
+
+.hero {
+  text-align: center;
+  padding: 4rem 1rem;
+  background: var(--light);
+}
+
+.profile-img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.metrics {
+  font-weight: 600;
+  margin: 0.5rem 0;
+}
+
+.buttons {
+  margin-top: 1.5rem;
+}
+
+.btn {
+  padding: 0.6rem 1.2rem;
+  border: 1px solid var(--green);
+  color: var(--green);
+  text-decoration: none;
+  margin: 0 0.3rem;
+}
+
+.btn.primary {
+  background: var(--green);
+  color: white;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  padding: 1rem;
+  background: white;
+  border-bottom: 1px solid #eee;
+}
+
+section {
+  padding: 3rem 1.5rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+section.alt {
+  background: var(--light);
+}
+
+h2 {
+  color: var(--green);
+  border-bottom: 3px solid var(--gold);
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+.card {
+  margin-bottom: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.grid img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  list-style: none;
+  padding: 0;
+}
+
+.skills li {
+  padding: 0.4rem 0.8rem;
+  background: #e9eeeb;
+  border-radius: 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: var(--green);
+  color: white;
+}
+
+footer a {
+  color: var(--gold);
+  text-decoration: none;
+}
