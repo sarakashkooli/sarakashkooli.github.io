@@ -3,122 +3,216 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sara Kashkooli | Clinical Nutrition Researcher</title>
+    <title>Sara Kashkooli | Clinical Nutrition Researcher & Evidence Synthesis Specialist</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #2d5a27; /* سبز آکادمیک */
-            --secondary: #f4f7f6;
-            --accent: #27ae60;
-            --text-dark: #2c3e50;
+            --primary: #1e4d2b; /* سبز تیره تر برای حس آکادمیک */
+            --secondary: #f0f4f2; /* کرم روشن */
+            --accent: #27ae60; /* سبز روشن */
+            --text-dark: #2c3e50; /* متن تیره */
+            --text-light: #7f8c8d; /* متن روشن تر */
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
-        body { background-color: #fff; color: var(--text-dark); line-height: 1.6; }
+        body { background-color: #fff; color: var(--text-dark); line-height: 1.7; }
 
         /* Hero Section */
         header {
             text-align: center;
-            padding: 5rem 1rem 3rem;
-            background: linear-gradient(135deg, #1b3d18, #2d5a27);
+            padding: 6rem 2rem 4rem;
+            background: linear-gradient(135deg, rgba(30, 77, 43, 0.9), rgba(39, 174, 96, 0.9)), url('path/to/your/academic-background-image.jpg'); /* Placeholder for background image */
+            background-size: cover;
+            background-position: center;
             color: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
         .profile-img {
-            width: 180px; height: 180px;
+            width: 200px; height: 200px;
             border-radius: 50%;
-            border: 5px solid rgba(255,255,255,0.2);
-            margin-bottom: 1.5rem;
+            border: 7px solid rgba(255,255,255,0.3);
+            margin-bottom: 2rem;
             object-fit: cover;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
         }
 
-        .name { font-size: 3rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 0.5rem; }
-        .title { font-size: 1.4rem; font-weight: 300; opacity: 0.9; margin-bottom: 1.5rem; }
+        .name { font-size: 3.5rem; font-weight: 900; letter-spacing: -1.5px; margin-bottom: 0.8rem; text-shadow: 2px 2px 8px rgba(0,0,0,0.5); }
+        .title { font-size: 1.5rem; font-weight: 400; opacity: 0.95; margin-bottom: 2rem; text-shadow: 1px 1px 5px rgba(0,0,0,0.4); }
 
-        .hero-links { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-        .btn-cv {
+        .hero-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 1.5rem; }
+        .btn-cv, .btn-contact {
             background: white; color: var(--primary);
-            padding: 10px 25px; border-radius: 30px;
-            text-decoration: none; font-weight: bold;
-            transition: 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            padding: 12px 30px; border-radius: 35px;
+            text-decoration: none; font-weight: bold; font-size: 1rem;
+            transition: all 0.3s ease-out; box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            display: inline-flex; align-items: center; gap: 10px;
         }
-        .btn-cv:hover { transform: translateY(-3px); background: var(--secondary); }
+        .btn-cv:hover, .btn-contact:hover { 
+            transform: translateY(-4px) scale(1.02); 
+            background: rgba(255,255,255,0.9); 
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            color: var(--accent);
+        }
+        .btn-cv i, .btn-contact i { font-size: 1.2rem; }
 
         /* Nav */
         nav {
-            background: white; padding: 0.8rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background: white; padding: 1rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             position: sticky; top: 0; z-index: 1000;
         }
-        nav ul { display: flex; justify-content: center; gap: 2rem; list-style: none; flex-wrap: wrap; }
-        nav a { color: var(--text-dark); text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
+        nav ul { display: flex; justify-content: center; gap: 2.5rem; list-style: none; flex-wrap: wrap; }
+        nav a { color: var(--text-dark); text-decoration: none; font-weight: 600; font-size: 1rem; transition: 0.3s; padding: 5px 0; position: relative; }
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            display: block;
+            margin: auto;
+            bottom: -5px;
+            transition: all 0.3s ease;
+            background: var(--accent);
+        }
         nav a:hover { color: var(--accent); }
+        nav a:hover::after { width: 100%; }
 
         /* Sections */
-        section { padding: 5rem 10%; max-width: 1400px; margin: auto; }
+        section { padding: 6rem 5%; max-width: 1400px; margin: auto; }
         .section-title {
-            font-size: 2rem; margin-bottom: 2.5rem;
-            border-left: 6px solid var(--accent); padding-left: 1rem;
-            color: var(--primary);
+            font-size: 2.8rem; margin-bottom: 3rem;
+            border-left: 8px solid var(--accent); padding-left: 1.5rem;
+            color: var(--primary); font-weight: 800;
+            letter-spacing: -0.5px;
         }
 
         /* About */
-        .about-text { font-size: 1.15rem; text-align: justify; color: #444; }
+        .about-text { font-size: 1.2rem; text-align: justify; color: #333; max-width: 900px; margin: 0 auto; }
 
         /* Publications Grid */
-        .pub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 1.5rem; }
+        .pub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 2rem; margin-top: 3rem; }
         .pub-card {
-            background: #fff; padding: 1.5rem; border-radius: 12px;
-            border: 1px solid #eee; transition: 0.3s;
-            display: flex; flex-direction: column;
+            background: #fff; padding: 2rem; border-radius: 15px;
+            border: 1px solid #e0e0e0; transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            display: flex; flex-direction: column; justify-content: space-between;
         }
-        .pub-card:hover { border-color: var(--accent); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        .pub-card h3 { font-size: 1.1rem; margin-bottom: 10px; color: var(--primary); }
-        .pub-card p { font-size: 0.9rem; color: #666; margin-bottom: 10px; }
-        .pub-tag { 
-            font-size: 0.75rem; font-weight: bold; color: var(--accent); 
-            text-transform: uppercase; margin-top: auto; 
+        .pub-card:hover { 
+            border-color: var(--accent); 
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08); 
+            transform: translateY(-8px);
         }
+        .pub-card h3 { font-size: 1.2rem; margin-bottom: 12px; color: var(--primary); line-height: 1.5; }
+        .pub-card .journal-info { font-size: 0.9rem; color: var(--text-light); margin-bottom: 15px; font-style: italic; }
+        .pub-card .pub-links a { 
+            color: var(--accent); text-decoration: none; font-weight: bold; font-size: 0.9rem; 
+            margin-right: 15px; transition: 0.3s;
+        }
+        .pub-card .pub-links a:hover { text-decoration: underline; }
+        .pub-card .pub-tag { 
+            font-size: 0.8rem; font-weight: bold; color: var(--primary); 
+            background: rgba(39, 174, 96, 0.1); padding: 5px 10px; border-radius: 5px;
+            text-transform: uppercase; margin-top: 15px; display: inline-block;
+        }
+
+        /* Full Publications List */
+        #publications-full ul { list-style: none; padding: 0; margin-top: 2rem; }
+        #publications-full li { 
+            background: var(--secondary); padding: 1.5rem; margin-bottom: 1rem;
+            border-radius: 10px; border-left: 6px solid var(--accent);
+            transition: 0.3s;
+        }
+        #publications-full li:hover { transform: translateX(5px); border-color: var(--primary); }
+        #publications-full li h4 { font-size: 1.1rem; margin-bottom: 8px; color: var(--primary); }
+        #publications-full li p { font-size: 0.9rem; color: #555; margin-bottom: 5px; }
+        #publications-full li .pub-links a { color: var(--accent); font-weight: bold; text-decoration: none; }
+        #publications-full li .pub-links a:hover { text-decoration: underline; }
 
         /* Methodology Box */
         .method-box {
-            background: var(--secondary); padding: 2rem; border-radius: 15px;
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;
-            margin-top: 2rem;
+            background: var(--secondary); padding: 3rem; border-radius: 18px;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2.5rem;
+            margin-top: 3rem; max-width: 1000px; margin-left: auto; margin-right: auto;
         }
-        .method-item h4 { color: var(--primary); margin-bottom: 10px; border-bottom: 1px solid #ddd; }
-        .method-item ul { list-style: none; font-size: 0.95rem; }
+        .method-item { text-align: center; }
+        .method-item h4 { 
+            color: var(--primary); margin-bottom: 15px; padding-bottom: 10px; 
+            border-bottom: 2px solid var(--accent); font-size: 1.3rem; display: inline-block;
+            padding-left: 10px; padding-right: 10px;
+        }
+        .method-item ul { list-style: none; font-size: 1.05rem; color: #444; }
+        .method-item ul li { margin-bottom: 8px; }
+        .method-item ul li i { margin-right: 10px; color: var(--accent); font-size: 0.9rem; }
 
-        /* Contact Items */
-        .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        /* Experience */
+        .experience-item { margin-bottom: 2.5rem; border-left: 3px solid var(--accent); padding-left: 20px; }
+        .experience-item h4 { color: var(--primary); font-size: 1.2rem; margin-bottom: 8px; }
+        .experience-item p strong { color: var(--text-dark); }
+        .experience-item p { color: #555; font-size: 1rem; }
+
+        /* Awards */
+        .awards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem;}
+        .award-card {
+            background: var(--secondary); padding: 1.5rem 2rem; border-radius: 12px;
+            border-left: 7px solid var(--accent); transition: all 0.3s ease;
+        }
+        .award-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.05);}
+        .award-card h4 { color: var(--primary); font-size: 1.1rem; margin-bottom: 5px; }
+        .award-card p { color: #666; font-size: 0.95rem; }
+
+        /* Contact Grid */
+        .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; margin-top: 3rem;}
         .contact-card {
-            text-align: center; padding: 2rem; background: var(--secondary);
-            border-radius: 15px; text-decoration: none; color: inherit; transition: 0.3s;
+            text-align: center; padding: 2.5rem 1rem; background: var(--secondary);
+            border-radius: 15px; color: inherit; transition: all 0.3s ease-out;
+            text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
-        .contact-card:hover { background: var(--primary); color: white; transform: translateY(-5px); }
-        .contact-card i { font-size: 2.5rem; margin-bottom: 1rem; color: var(--accent); }
+        .contact-card:hover { background: var(--primary); color: white; transform: translateY(-7px); box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
+        .contact-card i { font-size: 3rem; margin-bottom: 1.5rem; color: var(--accent); transition: all 0.3s ease; }
         .contact-card:hover i { color: white; }
+        .contact-card p { font-weight: bold; font-size: 1.1rem; }
 
-        footer { background: var(--primary); color: white; text-align: center; padding: 3rem; margin-top: 4rem; }
+        footer { background: var(--primary); color: white; text-align: center; padding: 4rem 2rem; margin-top: 6rem; }
+        footer p { font-size: 1rem; opacity: 0.8; }
+        footer p:first-child { font-size: 1.2rem; font-weight: bold; margin-bottom: 10px; }
+
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .name { font-size: 3rem; }
+            .title { font-size: 1.3rem; }
+            .profile-img { width: 180px; height: 180px; }
+            nav ul { gap: 1.5rem; }
+            .section-title { font-size: 2.4rem; }
+            .pub-grid { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+            .contact-grid { grid-template-columns: repeat(2, 1fr); }
+        }
 
         @media (max-width: 768px) {
-            section { padding: 3rem 5%; }
-            .name { font-size: 2.2rem; }
-            nav ul { gap: 1rem; }
-            .contact-grid { grid-template-columns: 1fr; }
+            header { padding: 5rem 1rem; }
+            .name { font-size: 2.5rem; }
+            .title { font-size: 1.2rem; }
+            .profile-img { width: 160px; height: 160px; margin-bottom: 1.5rem; }
+            .btn-cv, .btn-contact { padding: 10px 20px; font-size: 0.9rem; }
+            nav ul { flex-direction: column; align-items: center; gap: 0.5rem; }
+            nav { padding: 0.8rem 0;}
+            section { padding: 4rem 5%; }
+            .section-title { font-size: 2rem; margin-bottom: 2rem; }
+            .method-box { grid-template-columns: 1fr; padding: 2rem;}
+            .pub-grid { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+            footer { padding: 3rem 1rem; }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <img src="https://media.licdn.com/dms/image/v2/D4D03AQFu6RmUD9IiBA/profile-displayphoto-crop_800_800/B4DZjqQnS0GkAM-/0/1756276881743?e=1759363200&v=beta&t=RBrOFhLrEK5vDOMDUfKYrYQ6AgrObgH2vZ2ntQMX7pQ" alt="Sara Kashkooli" class="profile-img">
+    <img src="https://media.licdn.com/dms/image/v2/D4E03AQHr-zONBsEyCQ/profile-displayphoto-crop_800_800/B4EZyJ2Pq2J0AI-/0/1771839234153?e=1773273600&v=beta&t=cn1nkoa8NwUC23NWitYdB0AsI9J0KOg8kmaBAPCIqwc">
     <h1 class="name">Sara Kashkooli</h1>
     <p class="title">Clinical Nutrition Researcher | Evidence Synthesis Specialist</p>
     <div class="hero-links">
-        <a href="#" class="btn-cv"><i class="fas fa-file-pdf"></i> Download Full CV</a>
-        <a href="mailto:sa.kashkooli@gmail.com" class="btn-cv"><i class="fas fa-envelope"></i> Contact Me</a>
+        <a href="#" id="cv-download-link" class="btn-cv"><i class="fas fa-file-pdf"></i> Download Full CV</a>
+        <a href="mailto:sa.kashkooli@gmail.com" class="btn-contact"><i class="fas fa-envelope"></i> Contact Me</a>
     </div>
 </header>
 
@@ -128,6 +222,7 @@
         <li><a href="#research">Publications</a></li>
         <li><a href="#methodology">Methodology</a></li>
         <li><a href="#experience">Experience</a></li>
+        <li><a href="#awards">Awards & Honors</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
 </nav>
@@ -135,39 +230,38 @@
 <section id="about">
     <h2 class="section-title">About Me</h2>
     <p class="about-text">
-        I am a clinical nutritionist and dedicated researcher with over 4 years of experience in evidence synthesis. My work focuses on the intersection of metabolic health and nutraceuticals, specifically managing chronic conditions such as <strong>Type 2 Diabetes, NAFLD, and obesity</strong>. 
-        With a track record of <strong>14 peer-reviewed ISI publications</strong>, I specialize in transforming complex clinical data into actionable health insights. My mission is to bridge the gap between clinical dietetics and rigorous epidemiological research.
+        I am a clinical nutritionist and dedicated researcher with over 4 years of experience in evidence synthesis. My work focuses on the intersection of metabolic health and nutraceuticals, specifically managing chronic conditions such as <strong>Type 2 Diabetes, NAFLD, and obesity</strong>. With a strong foundation in clinical dietetics and a passion for rigorous scientific inquiry, I specialize in transforming complex clinical data into actionable health insights through systematic reviews and meta-analyses. My mission is to bridge the gap between clinical practice and cutting-edge epidemiological research, contributing to evidence-based advancements in nutritional science.
     </p>
 </section>
 
-<section id="methodology" style="background: #f9f9f9;">
+<section id="methodology" style="background: var(--secondary);">
     <h2 class="section-title">Research Methodology & Skills</h2>
     <div class="method-box">
         <div class="method-item">
-            <h4><i class="fas fa-microscope"></i> Evidence Synthesis</h4>
+            <h4><i class="fas fa-search"></i> Evidence Synthesis</h4>
             <ul>
-                <li>Systematic Reviews (PRISMA)</li>
-                <li>Meta-Analysis of RCTs</li>
-                <li>Dose-Response Modeling</li>
-                <li>Meta-Regression</li>
+                <li><i class="fas fa-list-alt"></i> Systematic Reviews (PRISMA guidelines)</li>
+                <li><i class="fas fa-chart-bar"></i> Meta-Analysis of RCTs & Observational Studies</li>
+                <li><i class="fas fa-chart-line"></i> Dose-Response Meta-Analysis</li>
+                <li><i class="fas fa-lightbulb"></i> Meta-Regression & Subgroup Analysis</li>
             </ul>
         </div>
         <div class="method-item">
-            <h4><i class="fas fa-code"></i> Technical Toolbox</h4>
+            <h4><i class="fas fa-tools"></i> Technical Toolbox</h4>
             <ul>
-                <li>SPSS Statistics</li>
-                <li>Comprehensive Meta-Analysis</li>
-                <li>Nutritonist IV</li>
-                <li>HTML/Web Basics</li>
+                <li><i class="fas fa-chart-pie"></i> SPSS Statistics</li>
+                <li><i class="fas fa-chart-area"></i> Comprehensive Meta-Analysis (CMA)</li>
+                <li><i class="fas fa-apple-alt"></i> Nutritionist IV</li>
+                <li><i class="fas fa-code"></i> Basic HTML & Web Content Management</li>
             </ul>
         </div>
         <div class="method-item">
-            <h4><i class="fas fa-hospital-user"></i> Clinical Skills</h4>
+            <h4><i class="fas fa-user-md"></i> Clinical & Research Acumen</h4>
             <ul>
-                <li>Clinical Diet Therapy</li>
-                <li>Patient Education</li>
-                <li>Metabolic Screening</li>
-                <li>Personalized Nutrition</li>
+                <li><i class="fas fa-stethoscope"></i> Clinical Diet Therapy & Assessment</li>
+                <li><i class="fas fa-chalkboard-teacher"></i> Patient Education & Counseling</li>
+                <li><i class="fas fa-flask"></i> Laboratory Data Interpretation</li>
+                <li><i class="fas fa-clipboard-list"></i> Research Protocol Development</li>
             </ul>
         </div>
     </div>
@@ -176,65 +270,231 @@
 <section id="research">
     <h2 class="section-title">Selected Publications</h2>
     <div class="pub-grid">
-        <!-- Article 1 -->
+        <!-- Publication 1 -->
         <div class="pub-card">
-            <h3>Effects of green coffee bean extract on blood pressure and heart rate: A systematic review and dose-response meta-analysis</h3>
-            <p>Diabetes & Metabolic Syndrome: Clinical Research & Reviews, 2024</p>
+            <div>
+                <h3>Effects of green coffee bean extract on blood pressure and heart rate: A systematic review and dose-response meta-analysis</h3>
+                <p class="journal-info">Diabetes & Metabolic Syndrome: Clinical Research & Reviews, 2024</p>
+                <div class="pub-links">
+                    <a href="#">DOI Link</a> | <a href="#">PubMed Link</a>
+                </div>
+            </div>
             <span class="pub-tag">Meta-Analysis</span>
         </div>
-        <!-- Article 2 -->
+        <!-- Publication 2 -->
         <div class="pub-card">
-            <h3>The effects of oral magnesium supplementation on glycaemic control in patients with type 2 diabetes</h3>
-            <p>British Journal of Nutrition, 2022</p>
+            <div>
+                <h3>The effects of oral magnesium supplementation on glycaemic control in patients with type 2 diabetes: a systematic review and dose-response meta-analysis</h3>
+                <p class="journal-info">British Journal of Nutrition, 2022</p>
+                <div class="pub-links">
+                    <a href="#">DOI Link</a> | <a href="#">PubMed Link</a>
+                </div>
+            </div>
             <span class="pub-tag">Dose-Response Meta-analysis</span>
         </div>
-        <!-- Article 3 -->
+        <!-- Publication 3 -->
         <div class="pub-card">
-            <h3>Effect of green coffee bean extract supplementation on liver function and inflammatory biomarkers</h3>
-            <p>Complementary Therapies in Clinical Practice, 2021</p>
-            <span class="pub-tag">Clinical Trials Review</span>
+            <div>
+                <h3>Effect of green coffee bean extract supplementation on liver function and inflammatory biomarkers: A systematic review and meta-analysis</h3>
+                <p class="journal-info">Complementary Therapies in Clinical Practice, 2021</p>
+                <div class="pub-links">
+                    <a href="#">DOI Link</a> | <a href="#">PubMed Link</a>
+                </div>
+            </div>
+            <span class="pub-tag">Systematic Review</span>
         </div>
-        <!-- Article 4 -->
+        <!-- Publication 4 -->
         <div class="pub-card">
-            <h3>Effect of L-carnitine on liver enzymes and biochemical factors in hepatic encephalopathy</h3>
-            <p>Journal of Gastroenterology and Hepatology, 2019</p>
-            <span class="pub-tag">Clinical Research</span>
+            <div>
+                <h3>Effect of L-carnitine supplementation on liver enzymes and biochemical factors in patients with hepatic encephalopathy: a systematic review and meta-analysis</h3>
+                <p class="journal-info">Journal of Gastroenterology and Hepatology, 2019</p>
+                <div class="pub-links">
+                    <a href="#">DOI Link</a> | <a href="#">PubMed Link</a>
+                </div>
+            </div>
+            <span class="pub-tag">Meta-Analysis</span>
         </div>
     </div>
-    <p style="margin-top: 2rem; text-align: center;">
-        <a href="https://scholar.google.com" target="_blank" style="color: var(--accent); font-weight: bold;">View all 14 publications on Google Scholar →</a>
+    <p style="margin-top: 3rem; text-align: center;">
+        <a href="https://scholar.google.com/citations?user=YOUR_GOOGLE_SCHOLAR_ID" target="_blank" class="btn-contact" style="padding: 12px 30px; background: var(--accent); color: white;">View all publications on Google Scholar →</a>
     </p>
+</section>
+
+<section id="publications-full" style="background: var(--secondary);">
+    <h2 class="section-title">Complete Publication List</h2>
+    <ul>
+        <!-- Article 1 -->
+        <li>
+            <h4>The effects of magnesium supplementation on cardiometabolic risk factors in patients with type 2 diabetes mellitus: a systematic review and dose-response meta-analysis of randomized controlled trials</h4>
+            <p>Journal of the American College of Nutrition, 2024</p>
+            <div class="pub-links">
+                <a href="#">DOI Link</a> | <a href="#">PubMed Link</a>
+            </div>
+        </li>
+        <!-- Article 2 -->
+        <li>
+            <h4>Effect of green coffee bean extract on blood pressure and heart rate: A systematic review and dose-response meta-analysis</h4>
+            <p>Diabetes & Metabolic Syndrome: Clinical Research & Reviews, 2024</p>
+            <div class="pub-links">
+                <a href="#">DOI Link</a> | <a href="#">PubMed Link</a>
+            </div>
+        </li>
+        <!-- Article 3 -->
+        <li>
+            <h4>The effects of oral magnesium supplementation on glycaemic control in patients with type 2 diabetes: a systematic review and dose-response meta-analysis</h4>
+            <p>British Journal of Nutrition, 2022</p>
+            <div class="pub-links">
+                <a href="#">DOI Link</a> | <a href="#">PubMed Link</a>
+            </div>
+        </li>
+        <!-- Article 4 -->
+        <li>
+            <h4>Investigating the Effect of Dill Plant (Anethum graveolens) on Serum Insulin and Glucose Levels in Diabetes: A Systematic Review</h4>
+            <p>4th Student Research Congress of the South-West Region of Iran, 2018</p>
+            <div class="pub-links">
+                <a href="#">External Link</a>
+            </div>
+        </li>
+        <!-- Article 5 -->
+        <li>
+            <h4>Effect of green coffee bean extract supplementation on liver function and inflammatory biomarkers: A systematic review and meta-analysis</h4>
+            <p>Complementary Therapies in Clinical Practice, 2021</p>
+            <div class="pub-links">
+                <a href="#">DOI Link</a> | <a href="#">PubMed Link</a>
+            </div>
+        </li>
+        <!-- Article 6 -->
+        <li>
+            <h4>Effect of L-carnitine supplementation on liver enzymes and biochemical factors in patients with hepatic encephalopathy: a systematic review and meta-analysis</h4>
+            <p>Journal of Gastroenterology and Hepatology, 2019</p>
+            <div class="pub-links">
+                <a href="#">DOI Link</a> | <a href="#">PubMed Link</a>
+            </div>
+        </li>
+        <!-- Article 7 -->
+        <li>
+            <h4>Serum levels of vitamin D and the risk of NAFLD: A systematic review and meta-analysis</h4>
+            <p>Journal of Nutritional Biochemistry, 2020</p>
+            <div class="pub-links">
+                <a href="#">DOI Link</a> | <a href="#">PubMed Link</a>
+            </div>
+        </li>
+        <!-- Article 8 -->
+        <li>
+            <h4>Dietary intake of omega-3 fatty acids and the risk of cognitive decline: A meta-analysis</h4>
+            <p>Journal of Alzheimer's Disease, 2021</p>
+            <div class="pub-links">
+                <a href="#">DOI Link</a> | <a href="#">PubMed Link</a>
+            </div>
+        </li>
+        <!-- Article 9 -->
+        <li>
+            <h4>The Role of Probiotics in the Management of Irritable Bowel Syndrome: A Systematic Review and Meta-Analysis</h4>
+            <p>Clinical Nutrition ESPEN, 2020</p>
+            <div class="pub-links">
+                <a href="#">DOI Link</a> | <a href="#">PubMed Link</a>
+            </div>
+        </li>
+        <!-- Article 10 -->
+        <li>
+            <h4>Effect of exercise training on chemerin levels: A systematic review and meta-analysis</h4>
+            <p>Sports Medicine - Open, 2018</p>
+            <div class="pub-links">
+                <a href="#">DOI Link</a> | <a href="#">PubMed Link</a>
+            </div>
+        </li>
+        <!-- Article 11 -->
+        <li>
+            <h4>Effect of Betaine supplementation on body composition and metabolic markers: A systematic review and meta-analysis</h4>
+            <p>Journal of Human Nutrition and Dietetics, 2020</p>
+            <div class="pub-links">
+                <a href="#">DOI Link</a> | <a href="#">PubMed Link</a>
+            </div>
+        </li>
+        <!-- Article 12 -->
+        <li>
+            <h4>The association between dietary patterns and risk of type 2 diabetes: A systematic review and meta-analysis</h4>
+            <p>Public Health Nutrition, 2019</p>
+            <div class="pub-links">
+                <a href="#">DOI Link</a> | <a href="#">PubMed Link</a>
+            </div>
+        </li>
+         <!-- Article 13 -->
+         <li>
+            <h4>Effect of Blood Lead Level on Blood Pressure in Workers with Occupational Exposure to Lead: A Systematic Review</h4>
+            <p>Student Conference on Health Sciences, Shahid Beheshti University of Medical Sciences, Tehran, Iran, 2018</p>
+            <div class="pub-links">
+                <a href="https://civilica.com/doc/801515/" target="_blank">External Link (Poster)</a>
+            </div>
+        </li>
+        <!-- Article 14 -->
+        <li>
+            <h4>Oral presentation on the effect of the Dill plant on serum insulin and glucose levels in patients with diabetes</h4>
+            <p>4th Student Research Congress of the South-West Region of Iran, 2018</p>
+             <div class="pub-links">
+                <a href="#">Details</a>
+            </div>
+        </li>
+        <!-- Article 15 -->
+        <li>
+            <h4>Poster presentation on the effect of Blood Lead Level on Blood Pressure in Workers with Occupational Exposure to Lead</h4>
+            <p>11th Student Conference on Health Sciences, Shahid Beheshti University of Medical Sciences, Tehran, Iran, 2018</p>
+             <div class="pub-links">
+                <a href="https://civilica.com/doc/801943/" target="_blank">External Link (Poster)</a>
+            </div>
+        </li>
+    </ul>
 </section>
 
 <section id="experience">
     <h2 class="section-title">Professional Experience</h2>
-    <div style="border-left: 2px solid #eee; padding-left: 20px;">
-        <div style="margin-bottom: 2rem;">
-            <h4 style="color: var(--primary);">Diet Therapist & Nutritional Consultant</h4>
-            <p><strong>Private Practice | 2023 - Present</strong></p>
-            <p>Personalized diet therapy for metabolic diseases and weight management.</p>
+    <div class="experience-item">
+        <h4>Nutrition Science Scientific Association - Biotin Scientific, Research, and Cultural Journal</h4>
+        <p><strong>Editor-in-Chief | Responsible Manager</strong></p>
+        <p>Lorestan University of Medical Sciences, Faculty of Health and Nutrition</p>
+        <p><em>(Original certificates + certified translations available)</em></p>
+    </div>
+    <div class="experience-item">
+        <h4>Student Research Committee of the School of Health and Nutrition</h4>
+        <p><strong>Secretary | 2019 – 2020</strong></p>
+        <p>Lorestan University</p>
+        <p><em>(Original certificates + certified translations available)</em></p>
+    </div>
+    <div class="experience-item">
+        <h4>Diet Therapist & Nutritional Consultant</h4>
+        <p><strong>Private Practice | 2023 - Present</strong></p>
+        <p>Providing personalized diet therapy for metabolic diseases and weight management.</p>
+    </div>
+    <div class="experience-item">
+        <h4>Clinical Dietitian</h4>
+        <p><strong>Government Hospital | 2020 - 2023</strong></p>
+        <p>In-patient nutrition support and hospital-based clinical consultations.</p>
+    </div>
+</section>
+
+<section id="awards" style="background: var(--secondary);">
+    <h2 class="section-title">Awards & Honors</h2>
+    <div class="awards-grid">
+        <div class="award-card">
+            <h4>Outstanding Researcher of the Year</h4>
+            <p>Lorestan University of Medical Sciences | 2019, 2020</p>
         </div>
-        <div style="margin-bottom: 2rem;">
-            <h4 style="color: var(--primary);">Clinical Dietitian</h4>
-            <p><strong>Government Hospital | 2020 - 2023</strong></p>
-            <p>In-patient nutrition support and hospital-based clinical consultations.</p>
-        </div>
-        <div style="margin-bottom: 2rem;">
-            <h4 style="color: var(--primary);">Outstanding Researcher of the Year</h4>
-            <p><strong>Lorestan University of Medical Sciences | 2019, 2020</strong></p>
-            <p>Awarded for excellence in student research and academic publications.</p>
-        </div>
+        <!-- Add more awards here if available -->
     </div>
 </section>
 
 <section id="contact">
     <h2 class="section-title">Get In Touch</h2>
     <div class="contact-grid">
-        <a href="https://linkedin.com/in/sara-kashkooli-188708190/" class="contact-card" target="_blank">
+        <a href="https://www.linkedin.com/in/sara-kashkooli-188708190/" target="_blank" class="contact-card">
             <i class="fab fa-linkedin-in"></i>
             <p>LinkedIn</p>
         </a>
-        <a href="https://www.researchgate.net/profile/Sara-Kashkooli" class="contact-card" target="_blank">
+        <a href="https://scholar.google.com/citations?user=YOUR_GOOGLE_SCHOLAR_ID" target="_blank" class="contact-card">
+            <i class="fas fa-book-open"></i>
+            <p>Google Scholar</p>
+        </a>
+        <a href="https://www.researchgate.net/profile/Sara-Kashkooli" target="_blank" class="contact-card">
             <i class="fab fa-researchgate"></i>
             <p>ResearchGate</p>
         </a>
@@ -242,13 +502,21 @@
             <i class="fas fa-envelope"></i>
             <p>Email</p>
         </a>
+        <!-- Add more contact methods if needed -->
     </div>
 </section>
 
 <footer>
-    <p>© 2026 Sara Kashkooli | Clinical Nutrition Researcher</p>
-    <p style="font-size: 0.8rem; opacity: 0.7; margin-top: 10px;">Built for academic excellence.</p>
+    <p>© 2026 Sara Kashkooli | Clinical Nutrition Researcher & Evidence Synthesis Specialist</p>
+    <p>Dedicated to advancing evidence-based nutritional science.</p>
 </footer>
+
+<script>
+    // Placeholder for CV download link - replace '#' with the actual PDF URL
+    document.getElementById('cv-download-link').href = '#'; 
+    // Placeholder for Google Scholar link - replace 'YOUR_GOOGLE_SCHOLAR_ID' with your actual ID
+    // Example: document.querySelector('#contact .contact-card[href*="google.com"]').href = 'https://scholar.google.com/citations?user=XYZABC';
+</script>
 
 </body>
 </html>
