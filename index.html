@@ -1,142 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sara Kashkooli | Academic Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sara Kashkooli | Academic Portfolio</title>
+
+  <!-- ✅ MUST be exactly like this -->
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<!-- ======== Navigation ======== -->
-<nav>
-    <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#publications">Publications</a></li>
-        <li><a href="#awards">Awards</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-</nav>
-
-<!-- ======== Hero ======== -->
 <header class="hero" id="about">
-    <div class="hero-content">
-        <h1>Sara Kashkooli</h1>
-        <p class="tagline">Dietitian & Clinical Nutritionist | Evidence Synthesis Specialist</p>
-        <p>H-index: 12 &nbsp;|&nbsp; Citations: 372 &nbsp;|&nbsp; Publications: 14</p>
-        <p>
-            My research focuses on systematic reviews and meta-analyses for metabolic diseases including diabetes, NAFLD, and obesity.
-            I aim to explore how ultra-processed foods modulate the gut-brain axis — identifying inflammatory pathways that influence mental health outcomes in adolescents.
-        </p>
-        <div class="buttons">
-            <a href="Kashkooli_Sara_CV_Publications_2026.pdf" class="btn btn-primary"><i class="fas fa-file-download"></i> Download CV</a>
-            <a href="mailto:Sa.kashkooli@gmail.com" class="btn"><i class="fas fa-envelope"></i> Email Me</a>
-        </div>
-    </div>
-    <div class="hero-image">
-        <img src="images/profile.jpg" alt="Sara Kashkooli">
-    </div>
+  <img src="images/profile.jpg" alt="Sara Kashkooli" class="profile-img">
+  <h1>Sara Kashkooli</h1>
+  <p class="subtitle">Dietitian & Clinical Nutritionist | Evidence Synthesis Specialist</p>
+  <p class="metrics">H-index: 12 | Citations: 372 | Publications: 14</p>
+
+  <p class="bio">
+    My research focuses on systematic reviews and meta-analyses in metabolic diseases
+    including diabetes, NAFLD, and obesity, with a particular interest in ultra-processed
+    foods and the gut–brain axis.
+  </p>
+
+  <div class="buttons">
+    <a href="Kashkooli_Sara_CV_Publications_2026.pdf" class="btn primary">Download CV</a>
+    <a href="mailto:Sa.kashkooli@gmail.com" class="btn">Email Me</a>
+  </div>
 </header>
 
-<!-- ======== Experience ======== -->
+<nav class="nav">
+  <a href="#experience">Experience</a>
+  <a href="#publications">Publications</a>
+  <a href="#awards">Awards</a>
+  <a href="#skills">Skills</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#contact">Contact</a>
+</nav>
+
 <section id="experience">
-    <h2 class="section-title">Professional Experience</h2>
-    <div class="timeline">
-        <div class="timeline-item">
-            <h3>Private Diet Therapy Practice</h3>
-            <p><strong>July 2024 – Present</strong></p>
-            <p>Personalized diet plans, chronic disease management, weight control.</p>
-        </div>
-        <div class="timeline-item">
-            <h3>Hospital Consultation – Sina Hospital</h3>
-            <p><strong>Feb 2022 – Present</strong></p>
-            <p>Clinical nutrition and diet therapy for inpatients and outpatients.</p>
-        </div>
-        <div class="timeline-item">
-            <h3>Hospital Consultation – Shohadaye Dehgol an</h3>
-            <p><strong>Sep 2020 – Feb 2022</strong></p>
-            <p>Medical nutrition therapy and patient counseling.</p>
-        </div>
-        <div class="timeline-item">
-            <h3>Editor-in-Chief – Biotin Journal</h3>
-            <p><strong>2019 – 2020</strong></p>
-            <p>Led academic publications and coordinated editorial board activities.</p>
-        </div>
-    </div>
+  <h2>Professional Experience</h2>
+
+  <div class="card">
+    <h3>Private Diet Therapy Practice</h3>
+    <span>July 2024 – Present</span>
+    <p>Personalized diet plans and chronic disease management.</p>
+  </div>
+
+  <div class="card">
+    <h3>Sina Hospital – Clinical Dietitian</h3>
+    <span>Feb 2022 – Present</span>
+    <p>Inpatient and outpatient clinical nutrition therapy.</p>
+  </div>
+
+  <div class="card">
+    <h3>Shohadaye Dehgol an Hospital</h3>
+    <span>Sep 2020 – Feb 2022</span>
+    <p>Medical nutrition therapy and patient counseling.</p>
+  </div>
+
+  <div class="card">
+    <h3>Editor-in-Chief – Biotin Journal</h3>
+    <span>2019 – 2020</span>
+  </div>
 </section>
 
-<!-- ======== Publications ======== -->
-<section id="publications" style="background: var(--bg-light);">
-    <h2 class="section-title">Research Publications</h2>
-    <div class="pub-list">
-        <!-- Example entry. We'll repeat for all 14 -->
-        <div class="pub-card">
-            <span class="pub-type">Q1 Journal</span>
-            <h3>Effects of green coffee bean extract on blood pressure and heart rate: A systematic review and dose-response meta-analysis</h3>
-            <p class="pub-meta">Diabetes Metab Syndr. 2024 (Impact Factor: 6.0)</p>
-        </div>
-        <!-- Add all other publications here... -->
-    </div>
+<section id="publications" class="alt">
+  <h2>Selected Publication</h2>
+
+  <div class="card">
+    <h3>Effects of green coffee bean extract on blood pressure</h3>
+    <p>
+      Systematic review and dose–response meta-analysis.<br>
+      <em>Diabetes & Metabolic Syndrome</em>, 2024.
+    </p>
+  </div>
 </section>
 
-<!-- ======== Awards ======== -->
 <section id="awards">
-    <h2 class="section-title">Awards & Honors</h2>
-    <div class="awards-grid">
-        <div class="award-item">
-            <img src="images/award-outstanding-researcher.jpg" alt="Outstanding Researcher Certificate">
-            <p><strong>Outstanding Researcher Award</strong> – Kurdistan Province, Iran (2021)</p>
-        </div>
-        <div class="award-item">
-            <img src="images/award-second-rank.jpg" alt="Second Rank Achievement">
-            <p><strong>Second Rank Achievement</strong> – University Nutrition Association</p>
-        </div>
-        <!-- Poster certificates -->
-        <div class="award-item">
-            <img src="images/poster1.jpg" alt="Poster Presentation 1">
-            <p>Poster Presentation – Student Conference on Health Sciences</p>
-        </div>
-    </div>
+  <h2>Awards & Honors</h2>
+
+  <div class="grid">
+    <figure>
+      <img src="images/award-outstanding-researcher.jpg">
+      <figcaption>Outstanding Researcher Award (2021)</figcaption>
+    </figure>
+
+    <figure>
+      <img src="images/award-second-rank.jpg">
+      <figcaption>Second Rank – University Nutrition Association</figcaption>
+    </figure>
+
+    <figure>
+      <img src="images/poster1.jpg">
+      <figcaption>Poster Presentation – Health Sciences Conference</figcaption>
+    </figure>
+  </div>
 </section>
 
-<!-- ======== Skills ======== -->
-<section id="skills">
-    <h2 class="section-title">Skills & Expertise</h2>
-    <div class="skill-container">
-        <span class="skill-tag">Systematic Review</span>
-        <span class="skill-tag">Meta-Analysis</span>
-        <span class="skill-tag">Python</span>
-        <span class="skill-tag">R Programming</span>
-        <span class="skill-tag">SPSS</span>
-        <span class="skill-tag">Medical Nutrition Therapy</span>
-        <span class="skill-tag">EndNote</span>
-        <span class="skill-tag">Comprehensive Meta-Analysis (CMA)</span>
-    </div>
+<section id="skills" class="alt">
+  <h2>Skills</h2>
+  <ul class="skills">
+    <li>Systematic Review</li>
+    <li>Meta‑Analysis</li>
+    <li>R</li>
+    <li>Python</li>
+    <li>SPSS</li>
+    <li>CMA</li>
+    <li>EndNote</li>
+  </ul>
 </section>
 
-<!-- ======== Gallery ======== -->
 <section id="gallery">
-    <h2 class="section-title">Photo Gallery</h2>
-    <div class="photo-grid">
-        <div class="photo-item"><img src="images/research-photo1.jpg" alt="Research Presentation"></div>
-        <div class="photo-item"><img src="images/research-photo2.jpg" alt="Conference"></div>
-        <div class="photo-item"><img src="images/research-photo3.jpg" alt="Clinical Work"></div>
-    </div>
+  <h2>Gallery</h2>
+  <div class="grid">
+    <img src="images/research-photo1.jpg">
+    <img src="images/research-photo2.jpg">
+    <img src="images/research-photo3.jpg">
+  </div>
 </section>
 
-<!-- ======== Footer ======== -->
 <footer id="contact">
-    <h2>Contact & Collaboration</h2>
-    <div class="social-links">
-        <a href="https://linkedin.com/in/sarakashkooli"><i class="fab fa-linkedin"></i></a>
-        <a href="mailto:Sa.kashkooli@gmail.com"><i class="fas fa-envelope"></i></a>
-        <a href="https://scholar.google.com/citations?user=XXXXX"><i class="fas fa-graduation-cap"></i></a>
-    </div>
-    <p>© 2026 Sara Kashkooli. All rights reserved.</p>
+  <p>
+    <a href="mailto:Sa.kashkooli@gmail.com">Email</a> |
+    <a href="https://linkedin.com/in/sarakashkooli">LinkedIn</a> |
+    <a href="https://scholar.google.com/">Google Scholar</a>
+  </p>
+  <p>© 2026 Sara Kashkooli</p>
 </footer>
 
 </body>
