@@ -1,139 +1,518 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sara Kashkooli | PhD Applicant - Nutrition & Metabolism</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sara Kashkooli | Clinical Nutritionist & Researcher</title>
+    <meta name="description" content="Academic Portfolio of Sara Kashkooli - Prospective PhD Candidate in Clinical Nutrition and Gut-Brain Axis">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS (via CDN for simplicity on GitHub Pages) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- ✅ بسیار مهم: لینک کردن CSS در فایل HTML -->
-  <link rel="stylesheet" href="style.css">
+    <!-- Tailwind Config for Custom Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#1e3a8a', // Dark Blue
+                        secondary: '#0ea5e9', // Light Blue
+                        accent: '#f59e0b', // Amber for Q1 highlights
+                    }
+                }
+            }
+        }
+    </script>
 
-  <!-- Font Setup -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        
+        /* Modal Animation */
+        .modal-enter { opacity: 0; transform: scale(0.9); }
+        .modal-enter-active { opacity: 1; transform: scale(1); transition: all 0.3s ease-out; }
+    </style>
 </head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-secondary selection:text-white">
 
-<body>
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 font-heading font-bold text-xl text-primary">
+                    S. Kashkooli
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-sm font-medium hover:text-secondary transition-colors">About</a>
+                    <a href="#resume" class="text-sm font-medium hover:text-secondary transition-colors">Resume</a>
+                    <a href="#publications" class="text-sm font-medium hover:text-secondary transition-colors">Publications</a>
+                    <a href="#awards" class="text-sm font-medium hover:text-secondary transition-colors">Awards</a>
+                    <a href="#gallery" class="text-sm font-medium hover:text-secondary transition-colors">Gallery</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-<header class="header">
-  <!-- ✅ استفاده از my1.jpg برای عکس پروفایل -->
-  <img src="https://cdn.jsdelivr.net/gh/sarakashkooli/sara-image@main/my1.jpg" class="profile-img" alt="Sara Kashkooli Profile Photo">
-  <h1>Sara Kashkooli</h1>
-  <p class="subtitle">Researcher | Clinical Nutrition & Evidence Synthesis</p>
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center gap-12">
+        <div class="md:w-2/3 text-center md:text-left">
+            <h1 class="font-heading text-4xl sm:text-5xl font-bold text-slate-900 leading-tight mb-4">
+                Sara Kashkooli
+            </h1>
+            <h2 class="text-xl sm:text-2xl text-secondary font-medium mb-6">
+                Clinical Nutritionist & Prospective PhD Candidate
+            </h2>
+            <p class="text-slate-600 text-lg mb-8 max-w-2xl leading-relaxed">
+                Dedicated to bridging clinical nutrition with psychiatry. Exploring how dietary quality and the gut microbiome influence mental health outcomes, with a focus on the gut-brain axis and metabolic diseases.
+            </p>
+            
+            <div class="flex flex-wrap justify-center md:justify-start gap-4 mb-8">
+                <a href="https://scholar.google.com/citations?hl=fa&user=pgtEHk4AAAAJ" target="_blank" class="flex items-center gap-2 bg-white border border-slate-200 shadow-sm px-5 py-2.5 rounded-full hover:shadow-md hover:border-secondary hover:text-secondary transition-all">
+                    <i class="fa-brands fa-google text-blue-500"></i> Google Scholar
+                </a>
+                <a href="https://www.researchgate.net/profile/Sara-Kashkooli" target="_blank" class="flex items-center gap-2 bg-white border border-slate-200 shadow-sm px-5 py-2.5 rounded-full hover:shadow-md hover:border-[#00ccbb] hover:text-[#00ccbb] transition-all">
+                    <i class="fa-brands fa-researchgate text-[#00ccbb]"></i> ResearchGate
+                </a>
+                <a href="https://www.linkedin.com/in/sara-kashkooli-188708190/" target="_blank" class="flex items-center gap-2 bg-white border border-slate-200 shadow-sm px-5 py-2.5 rounded-full hover:shadow-md hover:border-[#0a66c2] hover:text-[#0a66c2] transition-all">
+                    <i class="fa-brands fa-linkedin text-[#0a66c2]"></i> LinkedIn
+                </a>
+            </div>
+        </div>
+        
+        <div class="md:w-1/3 flex justify-center">
+            <!-- Profile Image with specific styling -->
+            <div class="relative group">
+                <div class="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                <img src="https://raw.githubusercontent.com/sarakashkooli/sara-image/main/profile.png" alt="Sara Kashkooli" 
+                     class="relative w-64 h-64 object-cover rounded-full border-4 border-white shadow-xl transform transition duration-500 hover:scale-105">
+            </div>
+        </div>
+    </section>
 
-  <div class="links">
-    <a href="https://scholar.google.com/citations?hl=fa&user=pgtEHk4AAAAJ&view_op=list_works&sortby=pubdate" target="_blank">Google Scholar</a>
-    <a href="https://www.linkedin.com/in/sara-kashkooli-188708190/" target="_blank">LinkedIn</a>
-    <a href="https://www.researchgate.net/profile/Sara-Kashkooli" target="_blank">ResearchGate</a>
-    <!-- پیشنهاد می‌شود آدرس ایمیل یا لینک CV نیز اضافه شود -->
-  </div>
-</header>
+    <!-- Research Statement -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-4 mb-10">
+                <div class="h-px bg-slate-300 flex-grow"></div>
+                <h2 class="font-heading text-3xl font-bold text-primary">Research Statement</h2>
+                <div class="h-px bg-slate-300 flex-grow"></div>
+            </div>
+            
+            <div class="bg-slate-50 rounded-2xl p-8 sm:p-12 shadow-inner text-slate-700 leading-loose text-lg text-justify border border-slate-100">
+                <p class="mb-6">
+                    My research pathway began with co-authoring systematic reviews and meta-analyses of clinical trials for metabolic diseases, including diabetes, NAFLD, and obesity. This work has resulted in <span class="font-semibold text-primary">14 publications</span>, including <span class="font-semibold text-accent">5 in Q1 journals</span>. My expertise in statistical analysis and research design has equipped me to contribute to advancing evidence-based nutritional interventions for complex metabolic conditions.
+                </p>
+                <p>
+                    I aim to investigate the critical relationship between dietary quality, the gut microbiome, and mental health outcomes. My proposed PhD research will focus on exploring how ultra-processed foods (UPFs) and non-nutritive additives modulate key pathways in the <strong class="text-primary">gut-brain axis</strong> to influence susceptibility to anxiety and depression in adolescents. I plan to identify specific inflammatory mechanisms driven by modern dietary patterns to develop nutritional frameworks that prevent the onset of mental disorders. This work seeks to bridge clinical nutrition with psychiatry to improve resilience and healthspan in vulnerable populations.
+                </p>
+            </div>
+            
+            <!-- Skills & Interests -->
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="font-heading text-xl font-semibold mb-6 flex items-center gap-2"><i class="fa-solid fa-microscope text-secondary"></i> Research Interests</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-blue-50 text-blue-700 rounded-lg text-sm font-medium border border-blue-100">Brain health (Gut-Brain Axis)</span>
+                        <span class="px-4 py-2 bg-blue-50 text-blue-700 rounded-lg text-sm font-medium border border-blue-100">NAFLD & Diabetes</span>
+                        <span class="px-4 py-2 bg-blue-50 text-blue-700 rounded-lg text-sm font-medium border border-blue-100">Clinical Trials & Cohorts</span>
+                        <span class="px-4 py-2 bg-blue-50 text-blue-700 rounded-lg text-sm font-medium border border-blue-100">Omega-3 & Meta-analysis</span>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-heading text-xl font-semibold mb-6 flex items-center gap-2"><i class="fa-solid fa-laptop-code text-secondary"></i> Skills & Software</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-slate-100 text-slate-700 rounded-lg text-sm font-medium border border-slate-200"><i class="fa-solid fa-stethoscope mr-1"></i> Medical Nutrition Therapy (MNT)</span>
+                        <span class="px-4 py-2 bg-slate-100 text-slate-700 rounded-lg text-sm font-medium border border-slate-200">SPSS & R</span>
+                        <span class="px-4 py-2 bg-slate-100 text-slate-700 rounded-lg text-sm font-medium border border-slate-200">Python</span>
+                        <span class="px-4 py-2 bg-slate-100 text-slate-700 rounded-lg text-sm font-medium border border-slate-200">EndNote</span>
+                        <span class="px-4 py-2 bg-slate-100 text-slate-700 rounded-lg text-sm font-medium border border-slate-200"><i class="fa-solid fa-language mr-1"></i> English (C1)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<main class="container">
+    <!-- Resume Section (Education & Employment) -->
+    <section id="resume" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                
+                <!-- Education -->
+                <div>
+                    <h2 class="font-heading text-2xl font-bold text-primary mb-8 flex items-center gap-3">
+                        <i class="fa-solid fa-graduation-cap"></i> Education
+                    </h2>
+                    <div class="relative border-l-2 border-slate-200 pl-6 pb-2">
+                        <div class="absolute w-4 h-4 bg-secondary rounded-full -left-[9px] top-1 border-4 border-white"></div>
+                        <h3 class="text-xl font-bold text-slate-800">Bachelor of Nutrition and Dietetics Science</h3>
+                        <p class="text-secondary font-medium mb-2">Lorestan University of Medical Science, Iran | 2016 - 2020</p>
+                        <ul class="list-disc list-inside text-slate-600 space-y-1">
+                            <li><strong class="text-slate-800">GPA:</strong> 16.31/20 (3.4/4.0)</li>
+                            <li><strong class="text-slate-800">Relevant Coursework:</strong> Epidemiology, Clinical Nutrition, Research Methodology</li>
+                        </ul>
+                    </div>
+                </div>
 
-<!-- 1. RESEARCH STATEMENT (برگرفته از متن شما) -->
-<section>
-  <h2>Research & PhD Aims</h2>
-  <p>
-    My research pathway began with co-authoring systematic reviews and meta-analyses of clinical trials for metabolic diseases, including diabetes, NAFLD, and obesity. This work has resulted in 14 publications, including 5 in Q1 journals. My expertise in statistical analysis and research design has equipped me to contribute to advancing evidence-based nutritional interventions for complex metabolic conditions.
-  </p>
-  <p>
-    I aim to investigate the critical relationship between dietary quality, the gut microbiome, and mental health outcomes. My proposed PhD research will focus on exploring how ultra-processed foods (UPFs) and non-nutritive additives modulate key pathways in the gut-brain axis to influence susceptibility to anxiety and depression in adolescents. I plan to identify specific inflammatory mechanisms driven by modern dietary patterns to develop nutritional frameworks that prevent the onset of mental disorders. This work seeks to bridge clinical nutrition with psychiatry to improve resilience and healthspan in vulnerable populations.
-  </p>
-</section>
+                <!-- Employment -->
+                <div>
+                    <h2 class="font-heading text-2xl font-bold text-primary mb-8 flex items-center gap-3">
+                        <i class="fa-solid fa-briefcase"></i> Employment History
+                    </h2>
+                    <div class="space-y-8">
+                        <!-- Job 1 -->
+                        <div class="relative border-l-2 border-slate-200 pl-6">
+                            <div class="absolute w-4 h-4 bg-primary rounded-full -left-[9px] top-1 border-4 border-white"></div>
+                            <h3 class="text-lg font-bold text-slate-800">Diet Therapist and Nutritional Consultant (Private Practice)</h3>
+                            <p class="text-slate-500 text-sm font-medium mb-2"><i class="fa-regular fa-calendar mr-1"></i> Jul 2024 – Present | Kurdistan, Iran</p>
+                            <ul class="list-disc list-outside ml-4 text-slate-600 text-sm space-y-1">
+                                <li>Offer personalized dietary consultations and plans for clients.</li>
+                                <li>Educate clients on healthy eating practices and weight management.</li>
+                            </ul>
+                        </div>
+                        <!-- Job 2 -->
+                        <div class="relative border-l-2 border-slate-200 pl-6">
+                            <div class="absolute w-4 h-4 bg-slate-400 rounded-full -left-[9px] top-1 border-4 border-white"></div>
+                            <h3 class="text-lg font-bold text-slate-800">Nutrition and Diet Therapy Consultant</h3>
+                            <p class="text-slate-500 text-sm font-medium mb-2"><i class="fa-regular fa-calendar mr-1"></i> Feb 2022 – Present | Sina Hospital, Kamyaran</p>
+                            <p class="text-slate-600 text-sm">Provide specialized consultation in nutrition and diet therapy to patients.</p>
+                        </div>
+                        <!-- Job 3 -->
+                        <div class="relative border-l-2 border-slate-200 pl-6">
+                            <div class="absolute w-4 h-4 bg-slate-400 rounded-full -left-[9px] top-1 border-4 border-white"></div>
+                            <h3 class="text-lg font-bold text-slate-800">Nutrition and Diet Therapy Consultant</h3>
+                            <p class="text-slate-500 text-sm font-medium mb-2"><i class="fa-regular fa-calendar mr-1"></i> Sep 2020 – Feb 2022 | Shohada Hospital, Dehgolan</p>
+                            <p class="text-slate-600 text-sm">Provided specialized consultation in nutrition and diet therapy to patients.</p>
+                        </div>
+                    </div>
+                </div>
 
-<!-- 2. PUBLICATIONS (۱۴ مقاله) -->
-<section>
-  <h2>Selected Publications (14 Meta-Analyses)</h2>
-  <ol class="publications">
-    <!-- Q1 Journals are bolded for emphasis -->
-    <li>Asbaghi, O., Kashkooli, S., et al. (2022). The Effects of Magnesium Supplementation on Blood Pressure and Obesity Measure... <em>Biological Trace Element Research</em>. <strong>Q1</strong>.</li>
-    <li>Asbaghi, O., Kashkooli, S., et al. (2021). Effect of green coffee bean extract supplementation on liver function... <em>Complementary Therapies in Clinical Practice</em>. <strong>Q1</strong>.</li>
-    <li>Ashtary-Larky, D., et al. (2022). Effects of betaine supplementation on cardiovascular markers. <em>Critical Reviews in Food Science and Nutrition</em>. <strong>Q1</strong>.</li>
-    <li>Samavat S, Ashtary-Larky D, Kashkooli S, et al. (2024). The effects of green coffee bean extract on blood pressure... <em>Diabetes Metab Syndr</em>. <strong>Q1</strong>.</li>
-    <li>Abbasnezhad, A., et al. (2019). Effect of L-carnitine on liver enzymes... <em>Journal of Gastroenterology and Hepatology</em>. <strong>Q1</strong>.</li>
-    <!-- بقیه مقالات -->
-    <li>Ashtary-Larky, D., et al. (2023). The effects of exercise training on serum concentrations of chemerin... <em>Archives of Physiology and Biochemistry</em>. Q2.</li>
-    <li>Ashtary-Larky, D., Kashkooli, S., et al. (2023). The effect of exercise training on serum concentrations of chemerin in patients with metabolic diseases... <em>Archives of Physiology and Biochemistry</em>. Q2.</li>
-    <li>Asbaghi O, Moradi S, Kashkooli S, et al. (2022). The effects of oral magnesium supplementation on glycaemic control... <em>Br J Nutr</em>. Q2.</li>
-    <li>Ashtary-Larky, D., et al. (2022). Betaine supplementation fails to improve body composition... <em>British Journal of Nutrition</em>. Q2.</li>
-    <li>Abbasnezhad, A., et al. (2020). The Effect of L Carnitine Supplementation on Lipid Profiles of Patients with Liver Disease... <em>Preventive Nutrition and Food Science</em>. Q2.</li>
-    <li>Asbaghi O, Kashkooli S, et al. (2019). Effect of calcium and vitamin D co-supplementation on lipid profile... <em>Obes Med</em>. Q2.</li>
-    <li>Asbaghi O, Kashkooli S, et al. (2019). The Effect of Calcium Vitamin D Co Supplementation on Insulin... <em>Horm Metab Res</em>. Q2.</li>
-    <li>Asbaghi, O., et al. (2020). The effects of L-carnitine supplementation on lipid concentrations... <em>Journal of Cardiovascular and Thoracic Research</em>. Q3.</li>
-    <li>Khosroshahi MZ, et al. (2019). Effect of curcumin supplementation on liver function enzymes... Q4.</li>
-  </ol>
-  
-  <h3 style="margin-top: 30px;">Posters & Presentations (5 Items)</h3>
-  <ol class="publications">
-    <li>Effect of Thyroid Hormones and TSH After Bariatric Surgery (2018).</li>
-    <li>Effect of FTO Polymorphism Genes on Leptin Levels (2018).</li>
-    <li>Prevalence of Zinc Deficiency in Thalassemia Major Patients (2018).</li>
-    <li>Effect of Blood Lead Level on Blood Pressure (2018).</li>
-    <li>Investigating the Effect of Dill Plant (Anethum graveolens) (2018).</li>
-  </ol>
-</section>
+            </div>
+        </div>
+    </section>
 
-<!-- 3. EMPLOYMENT HISTORY -->
-<section>
-  <h2>Employment History</h2>
-  
-  <h3>Diet Therapist & Nutritional Consultant (Private Practice)</h3>
-  <p><em>Jul 2024 – Present | Kurdistan Province, Iran</em></p>
-  <ul>
-    <li>Offer personalized dietary consultations and plans for clients.</li>
-    <li>Educate clients on healthy eating practices and weight management.</li>
-  </ul>
+    <!-- Publications Section -->
+    <section id="publications" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-3xl font-bold text-primary mb-4">Research Publications</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">A selection of 14 published peer-reviewed journal articles, including multiple high-impact Q1 and Q2 systematic reviews and meta-analyses.</p>
+            </div>
 
-  <h3>Nutrition and Diet Therapy Consultant</h3>
-  <p><em>Feb 2022 – Present | Sina Hospital, Kamyaran City, Iran</em></p>
-  <p>Provide specialized consultation in nutrition and diet therapy to patients.</p>
+            <!-- Publications Grid -->
+            <div class="space-y-6">
+                
+                <!-- Pub 1 -->
+                <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-lg transition-shadow">
+                    <div class="flex flex-wrap items-start justify-between gap-4 mb-3">
+                        <h3 class="text-lg font-bold text-slate-800 flex-1 leading-snug">
+                            The effects of green coffee bean extract on blood pressure and heart rate: A systematic review and dose-response meta-analysis of randomized controlled trials
+                        </h3>
+                        <div class="flex gap-2">
+                            <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs font-bold border border-yellow-200">Q1</span>
+                            <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-bold border border-blue-200">IF: 6.0</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-3">
+                        Samavat S, Ashtary-Larky D, Naeini F, Nazarian B, <strong>Kashkooli S</strong>, et al. <span class="italic text-slate-500">Diabetes Metab Syndr. 2024.</span>
+                    </p>
+                    <div class="text-sm bg-slate-50 p-3 rounded-lg mb-4 border border-slate-100">
+                        <strong class="text-slate-800">Role (5th Author):</strong> Data collection, screening, extracting numerical data, data standardization, subgroup analyses, and Excel data entry.
+                    </div>
+                    <a href="https://doi.org/10.1016/j.dsx.2024.103120" target="_blank" class="text-secondary text-sm font-semibold hover:underline inline-flex items-center gap-1">
+                        <i class="fa-solid fa-link"></i> DOI: 10.1016/j.dsx.2024.103120
+                    </a>
+                </div>
 
-  <h3>Nutrition and Diet Therapy Consultant</h3>
-  <p><em>Sep 2020 – Feb 2022 | Shohada Hospital, Dehgolan City, Iran</em></p>
-  <p>Provide specialized consultation in nutrition and diet therapy to patients.</p>
-</section>
+                <!-- Pub 2 -->
+                <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-lg transition-shadow">
+                    <div class="flex flex-wrap items-start justify-between gap-4 mb-3">
+                        <h3 class="text-lg font-bold text-slate-800 flex-1 leading-snug">
+                            The effects of exercise training on serum concentrations of chemerin in individuals with overweight and obesity: a systematic review, meta-analysis, and meta-regression...
+                        </h3>
+                        <div class="flex gap-2">
+                            <span class="bg-slate-100 text-slate-800 px-3 py-1 rounded-full text-xs font-bold border border-slate-300">Q2</span>
+                            <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-bold border border-blue-200">IF: 4.3</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-3">
+                        Ashtary-Larky D, Lamuchi-Deli N, <strong>Kashkooli S</strong>, et al. <span class="italic text-slate-500">Archives of Physiology and Biochemistry, 2023.</span>
+                    </p>
+                    <div class="text-sm bg-slate-50 p-3 rounded-lg mb-4 border border-slate-100">
+                        <strong class="text-slate-800">Role (3rd Author):</strong> Data collection, screening, extracting numerical data, standardization, subgroup analyses.
+                    </div>
+                    <a href="https://doi.org/10.1080/13813455.2021.1892148" target="_blank" class="text-secondary text-sm font-semibold hover:underline inline-flex items-center gap-1">
+                        <i class="fa-solid fa-link"></i> DOI: 10.1080/13813455.2021.1892148
+                    </a>
+                </div>
 
-<!-- 4. LEADERSHIP & AWARDS -->
-<section>
-  <h2>Leadership, Awards & Skills</h2>
-  
-  <h3>Key Awards & Leadership</h3>
-  <ul>
-    <li><strong>Outstanding Researcher Award</strong> (2019, 2020) - Top 1% among 5,000 students, Lorestan University of Medical Sciences.</li>
-    <li><strong>Managing Editor and Editor in Chief</strong>, Biotin Scientific Journal (2019–2020).</li>
-    <li><strong>Secretary-General</strong>, Nutrition Sciences Student Association (2018–2019).</li>
-    <li><strong>Head of Student Research Committee</strong>, Health and Nutrition academy (2018–2019).</li>
-  </ul>
+                <!-- Pub 4 (Q1 Example) -->
+                <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-lg transition-shadow">
+                    <div class="flex flex-wrap items-start justify-between gap-4 mb-3">
+                        <h3 class="text-lg font-bold text-slate-800 flex-1 leading-snug">
+                            Effects of betaine supplementation on cardiovascular markers: A systematic review and Meta-analysis
+                        </h3>
+                        <div class="flex gap-2">
+                            <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs font-bold border border-yellow-200">Q1</span>
+                            <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-bold border border-blue-200">IF: 8.8</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-3">
+                        Ashtary-Larky D, Bagheri R, Ghanavati M, Asbaghi O, <strong>Kashkooli S</strong>, et al. <span class="italic text-slate-500">Critical Reviews in Food Science and Nutrition, 2022.</span>
+                    </p>
+                    <div class="text-sm bg-slate-50 p-3 rounded-lg mb-4 border border-slate-100">
+                        <strong class="text-slate-800">Role (5th Author):</strong> Screening articles, extracting data, data standardization, subgroup analyses.
+                    </div>
+                    <a href="https://doi.org/10.1080/10408398.2021.1902938" target="_blank" class="text-secondary text-sm font-semibold hover:underline inline-flex items-center gap-1">
+                        <i class="fa-solid fa-link"></i> DOI: 10.1080/10408398.2021.1902938
+                    </a>
+                </div>
 
-  <h3>Skills & Expertise</h3>
-  <div class="skills-list">
-    <p><strong>Clinical:</strong> Medical Nutrition Therapy (MNT), Chronic Disease Management, Supplementation Protocols.</p>
-    <p><strong>Software:</strong> <em>SPSS, EndNote, </em><strong>Python, R</strong>, Nutrition IV.</p>
-    <p><strong>Languages:</strong> Persian (Native) | Kurdish (Fluent) | English (C1).</p>
-  </div>
-</section>
+                <!-- Pub 8 (Q1 Example) -->
+                <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-lg transition-shadow">
+                    <div class="flex flex-wrap items-start justify-between gap-4 mb-3">
+                        <h3 class="text-lg font-bold text-slate-800 flex-1 leading-snug">
+                            The effect of green coffee bean extract supplementation on liver function and inflammatory biomarkers: A meta-analysis of randomized clinical trials
+                        </h3>
+                        <div class="flex gap-2">
+                            <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs font-bold border border-yellow-200">Q1</span>
+                            <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-bold border border-blue-200">IF: 3.5</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-3">
+                        Asbaghi O, <strong>Kashkooli S</strong>, Mardani M, et al. <span class="italic text-slate-500">Complementary Therapies in Clinical Practice, 2021.</span>
+                    </p>
+                    <div class="text-sm bg-slate-50 p-3 rounded-lg mb-4 border border-slate-100">
+                        <strong class="text-slate-800">Role (2nd Author):</strong> Screened articles for eligibility, extracted/validated data, performed data standardization, statistical analysis, and manuscript drafting.
+                    </div>
+                    <a href="https://doi.org/10.1016/j.ctcp.2021.101349" target="_blank" class="text-secondary text-sm font-semibold hover:underline inline-flex items-center gap-1">
+                        <i class="fa-solid fa-link"></i> DOI: 10.1016/j.ctcp.2021.101349
+                    </a>
+                </div>
 
-<!-- 5. GALLERY (GCE, Awards, etc.) -->
-<section>
-  <h2>Certificates & Academic Life</h2>
-  <div class="gallery">
-    <!-- Images from Awards (award1, award2, award3) and Certificates (cer1 to cer10) -->
-    <img src="https://cdn.jsdelivr.net/gh/sarakashkooli/sara-image@main/award1.png" alt="Award 1">
-    <img src="https://cdn.jsdelivr.net/gh/sarakashkooli/sara-image@main/cer1.jpg" alt="Certificate 1">
-    <img src="https://cdn.jsdelivr.net/gh/sarakashkooli/sara-image@main/cer2.jpg" alt="Certificate 2">
-    <img src="https://cdn.jsdelivr.net/gh/sarakashkooli/sara-image@main/cer3.jpg" alt="Certificate 3">
-    <img src="https://cdn.jsdelivr.net/gh/sarakashkooli/sara-image@main/general1.jpeg" alt="Nutrition Focus">
-    <!-- اضافه کردن لینک ها به سایر تصاویر -->
-  </div>
-</section>
+            </div>
 
-</main>
+            <!-- Note for remaining publications -->
+            <div class="mt-8 text-center">
+                <p class="text-slate-500 text-sm mb-4">* Displaying key publications. For a complete list of all 14 articles, please visit my Google Scholar profile.</p>
+                <a href="https://scholar.google.com/citations?hl=fa&user=pgtEHk4AAAAJ" target="_blank" class="inline-block bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-800 transition-colors shadow-md hover:shadow-lg">
+                    View All on Google Scholar <i class="fa-solid fa-arrow-right ml-2"></i>
+                </a>
+            </div>
 
-<footer class="footer">
-  © 2026 Sara Kashkooli | Designed for PhD/Master Applications
-</footer>
+        </div>
+    </section>
 
+    <!-- Posters & Awards Section -->
+    <section id="awards" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                
+                <!-- Leadership & Awards -->
+                <div>
+                    <h2 class="font-heading text-2xl font-bold text-primary mb-8 flex items-center gap-3">
+                        <i class="fa-solid fa-trophy text-accent"></i> Leadership & Awards
+                    </h2>
+                    <div class="space-y-6">
+                        <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex gap-4 items-start">
+                            <div class="w-12 h-12 bg-yellow-50 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-star text-accent text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-800">Outstanding Researcher (2019, 2020)</h3>
+                                <p class="text-sm text-slate-500 mb-1">Lorestan University of Medical Sciences</p>
+                                <p class="text-sm text-slate-600 bg-slate-100 inline-block px-2 py-1 rounded">Top 1% among 5,000 students</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex gap-4 items-start">
+                            <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-users text-blue-500 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-800">Secretary-General</h3>
+                                <p class="text-sm text-slate-500 mb-1">Nutrition Sciences Student Association | 2018–2019</p>
+                                <p class="text-sm text-slate-600">Led team ranked #2 among 12 university associations.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex gap-4 items-start">
+                            <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-flask text-blue-500 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-800">Head of Student Research Committee</h3>
+                                <p class="text-sm text-slate-500 mb-1">Health and Nutrition Academy | Feb 2018 – Feb 2019</p>
+                                <p class="text-sm text-slate-600">Ranked #2 among 6 university research committees.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex gap-4 items-start">
+                            <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-pen-nib text-blue-500 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-800">Editor in Chief & Managing Editor</h3>
+                                <p class="text-sm text-slate-500 mb-1">Biotin Scientific Journal | 2019–2020</p>
+                                <p class="text-sm text-slate-600">Dedicated to advancing nutrition knowledge among peers.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Posters -->
+                <div>
+                    <h2 class="font-heading text-2xl font-bold text-primary mb-8 flex items-center gap-3">
+                        <i class="fa-solid fa-chalkboard-user"></i> Poster Presentations
+                    </h2>
+                    <ul class="space-y-4">
+                        <li class="flex gap-3 items-start">
+                            <i class="fa-solid fa-check-circle text-secondary mt-1"></i>
+                            <p class="text-sm text-slate-700"><strong class="text-slate-800">2018:</strong> Effect of thyroid hormones and TSH Levels after Bariatric Surgery in obese patients: A systematic review. <em class="text-slate-500">First annual national surgical technologist student research conference, Tehran.</em></p>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <i class="fa-solid fa-check-circle text-secondary mt-1"></i>
+                            <p class="text-sm text-slate-700"><strong class="text-slate-800">2018:</strong> Effect of FTO polymorphism genes on Leptin levels: a systematic review. <em class="text-slate-500">5th Southwestern national Student Research Congress, Behbahan.</em></p>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <i class="fa-solid fa-check-circle text-secondary mt-1"></i>
+                            <p class="text-sm text-slate-700"><strong class="text-slate-800">2018:</strong> Prevalence of zinc deficiency in patients with thalassemia major in Iran. <em class="text-slate-500">11th Student Conference on Health Sciences, Tehran.</em></p>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <i class="fa-solid fa-check-circle text-secondary mt-1"></i>
+                            <p class="text-sm text-slate-700"><strong class="text-slate-800">2018:</strong> Effect of Blood Lead Level on Blood Pressure in Workers with Occupational Exposure to Lead. <em class="text-slate-500">11th Student Conference on Health Sciences, Tehran.</em></p>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <i class="fa-solid fa-check-circle text-secondary mt-1"></i>
+                            <p class="text-sm text-slate-700"><strong class="text-slate-800">2018:</strong> Investigating the Effect of Dill Plant (Anethum graveolens) on Serum Insulin and Glucose Levels in Diabetes. <em class="text-slate-500">4th Student Research Congress, Abadan.</em></p>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section (Certificates, Awards, Activities) -->
+    <section id="gallery" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="font-heading text-3xl font-bold text-primary mb-4">Gallery & Certificates</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">Click on any image to view it in full screen.</p>
+            </div>
+
+            <!-- CSS Grid for Gallery -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" id="gallery-container">
+                <!-- Images will be injected here via JS to handle format extensions properly -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Fullscreen Image Modal (Lightbox) -->
+    <div id="image-modal" class="fixed inset-0 z-[100] hidden bg-black/90 flex items-center justify-center p-4">
+        <button id="close-modal" class="absolute top-6 right-6 text-white text-4xl hover:text-slate-300 transition-colors">&times;</button>
+        <img id="modal-image" src="" alt="Expanded Image" class="max-w-full max-h-[90vh] object-contain rounded shadow-2xl">
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-slate-300 py-10 text-center">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="https://scholar.google.com/citations?hl=fa&user=pgtEHk4AAAAJ" class="text-slate-300 hover:text-white text-2xl transition-colors"><i class="fa-brands fa-google"></i></a>
+                <a href="https://www.linkedin.com/in/sara-kashkooli-188708190/" class="text-slate-300 hover:text-white text-2xl transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.researchgate.net/profile/Sara-Kashkooli" class="text-slate-300 hover:text-white text-2xl transition-colors"><i class="fa-brands fa-researchgate"></i></a>
+            </div>
+            <p class="text-sm mb-2">&copy; 2024 Sara Kashkooli. All rights reserved.</p>
+            <p class="text-xs text-slate-400">Designed for Academic Portfolio</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Gallery Data (Using exactly the formats and names provided)
+        const baseUrl = 'https://raw.githubusercontent.com/sarakashkooli/sara-image/main/';
+        const images = [
+            { src: 'award1.png', category: 'Awards' },
+            { src: 'award2.jpg', category: 'Awards' },
+            { src: 'award3.jpg', category: 'Awards' },
+            { src: 'cer1.jpg', category: 'Certificates' },
+            { src: 'cer2.jpg', category: 'Certificates' },
+            { src: 'cer3.jpg', category: 'Certificates' },
+            { src: 'cer4.jpg', category: 'Certificates' },
+            { src: 'cer5.jpg', category: 'Certificates' },
+            { src: 'cer6.jpg', category: 'Certificates' },
+            { src: 'cer7.jpg', category: 'Certificates' },
+            { src: 'cer8.jpg', category: 'Certificates' },
+            { src: 'cer9.jpg', category: 'Certificates' },
+            { src: 'cer10.jpg', category: 'Certificates' },
+            { src: 'act1.jpg', category: 'Activities' },
+            { src: 'my1.jpg', category: 'Activities' },
+            { src: 'my2.jpg', category: 'Activities' },
+            { src: 'my3.jpg', category: 'Activities' },
+            { src: 'my4.jpg', category: 'Activities' },
+            { src: 'my5.jpg', category: 'Activities' },
+            { src: 'my6.jpg', category: 'Activities' },
+            { src: 'my7.jpg', category: 'Activities' },
+            { src: 'general1.JPEG', category: 'General' },
+            { src: 'general2.png', category: 'General' },
+            { src: 'general3.jpg', category: 'General' },
+        ];
+
+        const galleryContainer = document.getElementById('gallery-container');
+        
+        // Render Images
+        images.forEach(img => {
+            const div = document.createElement('div');
+            div.className = 'aspect-square overflow-hidden rounded-xl cursor-pointer group relative bg-slate-100 shadow-sm border border-slate-200';
+            div.innerHTML = `
+                <div class="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex flex-col items-center justify-center">
+                    <i class="fa-solid fa-magnifying-glass text-white text-2xl mb-2"></i>
+                    <span class="text-white text-xs font-medium px-2 py-1 border border-white/50 rounded-full">${img.category}</span>
+                </div>
+                <img src="${baseUrl}${img.src}" alt="${img.category}" class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110" loading="lazy" onclick="openModal('${baseUrl}${img.src}')">
+            `;
+            galleryContainer.appendChild(div);
+        });
+
+        // Lightbox Logic
+        const modal = document.getElementById('image-modal');
+        const modalImg = document.getElementById('modal-image');
+        const closeBtn = document.getElementById('close-modal');
+
+        window.openModal = function(src) {
+            modalImg.src = src;
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling under modal
+        }
+
+        const closeModal = () => {
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        closeBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if(e.target === modal) closeModal();
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if(e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+    </script>
 </body>
 </html>
