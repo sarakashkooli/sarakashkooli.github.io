@@ -4,33 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sara Kashkooli | Academic Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- FontAwesome for Academic Icons -->
+    <link rel="stylesheet" href="style.css?v=1.1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Header / Navigation -->
     <header>
         <div class="nav-container">
             <a href="#" class="logo">SK.</a>
             <nav>
                 <ul>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#research">Research</a></li>
+                    <li><a href="#research">Research & Ideas</a></li>
+                    <li><a href="#active-projects">Current Work</a></li>
                     <li><a href="#publications">Publications</a></li>
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#blog">Scientific Posts</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
-            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+            <div class="menu-toggle" id="mobile-menu-btn"><i class="fas fa-bars"></i></div>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <h1>Sara Kashkooli</h1>
@@ -44,13 +41,12 @@
             <div class="social-links">
                 <a href="https://www.linkedin.com/in/sara-kashkooli-188708190/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
                 <a href="mailto:Sa.kashkooli@gmail.com"><i class="fas fa-envelope"></i> Email</a>
-                <a href="#" target="_blank"><i class="ai ai-google-scholar"></i> Scholar</a>
+                <a href="#" target="_blank"><i class="fas fa-graduation-cap"></i> Scholar</a>
                 <a href="#" target="_blank"><i class="fab fa-researchgate"></i> ResearchGate</a>
             </div>
         </div>
     </section>
 
-    <!-- About & Research Statement -->
     <section id="about" class="container">
         <div class="section-title">
             <h2>About & Research Statement</h2>
@@ -58,49 +54,41 @@
         <div class="grid-2">
             <div class="statement-card">
                 <h3>Research Pathway</h3>
-                <p>My research journey began with co-authoring systematic reviews and meta-analyses of clinical trials for metabolic diseases, resulting in <strong>14 publications</strong> (including 5 in Q1 journals). Over the past five years, my continuous role as a clinical diet therapy consultant in hospital settings has provided me with deep practical insights into patient trajectories and chronic conditions.</p>
+                <p>My research journey began with co-authoring systematic reviews and meta-analyses of clinical trials for metabolic diseases, resulting in <strong>14 publications</strong> (including 5 in Q1 journals). Over the past five years, my continuous role as a clinical diet therapy consultant in hospital settings has provided me with deep practical insights into patient trajectories and chronic conditions[cite: 7].</p>
             </div>
             <div class="statement-card highlight">
-                <h3>Future Vision</h3>
-                <p>Moving forward, my research goal is to transition from clinical nutrition to <strong>large-scale nutritional epidemiology</strong>. I aim to leverage whole-of-population linked data and prospective cohorts to investigate the longitudinal trajectories of chronic diseases, diet-gene interactions, and healthy ageing. I am particularly eager to apply advanced statistical modeling and Python/R programming to generate data-driven public health evidence.</p>
+                <h3>Future Vision & Core Ideas</h3>
+                <p>Moving forward, my research goal is to transition from clinical nutrition to <strong>large-scale nutritional epidemiology</strong>[cite: 8]. I aim to leverage whole-of-population linked data and prospective cohorts to investigate the longitudinal trajectories of chronic diseases, diet-gene interactions, and their impacts on healthy ageing[cite: 9]. I am particularly eager to apply advanced statistical modeling and Python/R programming to generate data-driven public health evidence[cite: 10, 136].</p>
             </div>
         </div>
     </section>
 
-    <!-- Research Interests & Skills -->
     <section id="research" class="bg-light">
         <div class="container">
             <div class="section-title">
-                <h2>Research Interests & Skills</h2>
+                <h2>Research Interests & Novel Ideas</h2>
+                <p>My academic pursuit lies at the intersection of nutrition, advanced biostatistics, and genomics.</p>
             </div>
             <div class="grid-2">
                 <div>
                     <h3>Key Research Domains</h3>
                     <ul class="interests-list">
-                        <li><i class="fas fa-chart-line"></i> <strong>Nutritional Epidemiology:</strong> Prospective cohort designs and public health evidence.</li>
-                        <li><i class="fas fa-dna"></i> <strong>Diet-Gene Interactions:</strong> Nutrigenetics and personalized prevention strategies.</li>
-                        <li><i class="fas fa-heartbeat"></i> <strong>Healthy Ageing:</strong> Longitudinal dietary trajectories and chronic disease management.</li>
-                        <li><i class="fas fa-calculator"></i> <strong>Advanced Biostatistics:</strong> Meta-analysis, regression, and data standardization.</li>
+                        <li><i class="fas fa-chart-line"></i> <strong>Nutritional Epidemiology:</strong> Investigating the long-term impact of dietary patterns on chronic diseases using prospective cohorts[cite: 131, 132].</li>
+                        <li><i class="fas fa-dna"></i> <strong>Diet-Gene Interactions:</strong> Studying how genetic polymorphisms modulate metabolic responses to specific diets[cite: 132].</li>
+                        <li><i class="fas fa-heartbeat"></i> <strong>Healthy Ageing:</strong> Mapping longitudinal dietary trajectories associated with active, disease-free lifespans[cite: 131, 132].</li>
+                        <li><i class="fas fa-calculator"></i> <strong>Advanced Biostatistics:</strong> Developing robust pipelines for unit standardization and subgroup meta-analyses[cite: 29, 37, 43].</li>
                     </ul>
                 </div>
                 <div>
-                    <h3>Skills & Abilities</h3>
-                    <div class="skills-box">
-                        <h4>Technical & Software</h4>
-                        <div class="tags">
-                            <span>Python (Pandas, NumPy, SciPy)</span>
-                            <span>R Programming</span>
-                            <span>SPSS</span>
-                            <span>EndNote</span>
-                            <span>Nutrition IV</span>
+                    <h3>Future Research Ideas</h3>
+                    <div class="ideas-box">
+                        <div class="idea-item">
+                            <h5><i class="fas fa-lightbulb"></i> Machine Learning in Cohort Studies</h5>
+                            <p>Applying machine learning clustering algorithms to discover latent dietary patterns within prospective cohorts, bypassing the limitations of traditional, manually-defined index scores.</p>
                         </div>
-                        <h4 style="margin-top: 20px;">Clinical & Academic</h4>
-                        <div class="tags">
-                            <span>Medical Nutrition Therapy (MNT)</span>
-                            <span>Systematic Reviews</span>
-                            <span>Meta-Analysis</span>
-                            <span>Scientific Writing</span>
-                            <span>English (C1)</span>
+                        <div class="idea-item">
+                            <h5><i class="fas fa-lightbulb"></i> Nutrigenetics & Chronic Diseases</h5>
+                            <p>Designing dynamic meta-regression models to explore how specific gene polymorphisms (such as <em>FTO</em>) interact with macronutrient distributions to influence adiposity and metabolic health[cite: 113].</p>
                         </div>
                     </div>
                 </div>
@@ -108,129 +96,138 @@
         </div>
     </section>
 
-    <!-- Publications Section -->
-    <section id="publications" class="container">
+    <section id="active-projects" class="container">
         <div class="section-title">
-            <h2>Selected Publications (14 Total)</h2>
-            <p>Demonstrated expertise in systematic reviews, dose-response meta-analyses, and clinical data extraction.</p>
+            <h2>Current Works & Active Projects</h2>
+            <p>A glimpse into what I am currently working on to bridge clinical work and advanced data analysis.</p>
         </div>
-
-        <div class="pub-list">
-            <!-- Pub 1 -->
-            <div class="pub-item">
-                <span class="pub-badge q1">Q1 Journal (IF: 6.0)</span>
-                <h4 class="pub-title">The effects of green coffee bean extract on blood pressure and heart rate: A systematic review and dose-response meta-analysis of randomized controlled trials</h4>
-                <p class="pub-authors">Samavat S, Ashtary-Larky D, Naeini F, Nazarian B, <strong>Kashkooli S</strong>, Clark CTC, Bagheri R, Asbaghi O, et al.</p>
-                <p class="pub-journal"><em>Diabetes & Metabolic Syndrome: Clinical Research & Reviews</em> (2024)</p>
-                <div class="pub-details">
-                    <strong>Contribution:</strong> 5th Author. Handled article screening, extracted numerical data, performed standardization and subgroup analyses.
-                </div>
-                <a href="https://doi.org/10.1016/j.dsx.2024.103120" target="_blank" class="doi-btn"><i class="fas fa-external-link-alt"></i> DOI Link</a>
+        <div class="grid-2">
+            <div class="project-card">
+                <div class="project-status">Active Project</div>
+                <h3>Developing Semi-Automated Meta-Analysis Pipelines</h3>
+                <p>Leveraging my high proficiency in Python (Pandas, NumPy, and SciPy), I am building a custom scripting framework designed to automate the screening, extraction, and standardization of clinical trial data units (e.g., converting lipid levels or enzyme activities across heterogeneous study outputs)[cite: 133, 136]. This significantly reduces manual entry error and accelerates systematic synthesis.</p>
             </div>
-
-            <!-- Pub 2 -->
-            <div class="pub-item">
-                <span class="pub-badge q1">Q1 Journal (IF: 8.8)</span>
-                <h4 class="pub-title">Effects of betaine supplementation on cardiovascular markers: A systematic review and Meta-analysis</h4>
-                <p class="pub-authors">Ashtary-Larky D, Bagheri R, Ghanavati M, Asbaghi O, <strong>Kashkooli S</strong>, Tinsley GM, et al.</p>
-                <p class="pub-journal"><em>Critical Reviews in Food Science and Nutrition</em> (2022)</p>
-                <div class="pub-details">
-                    <strong>Contribution:</strong> 5th Author. Involved in systematic literature searching, data extraction, and managing the database in Excel.
-                </div>
-                <a href="https://doi.org/10.1080/10408398.2021.1902938" target="_blank" class="doi-btn"><i class="fas fa-external-link-alt"></i> DOI Link</a>
-            </div>
-
-            <!-- Pub 3 -->
-            <div class="pub-item">
-                <span class="pub-badge q1">Q1 Journal (IF: 3.5)</span>
-                <h4 class="pub-title">The effect of green coffee bean extract supplementation on liver function and inflammatory biomarkers: A meta-analysis of randomized clinical trials</h4>
-                <p class="pub-authors">Asbaghi O, <strong>Kashkooli S</strong>, Mardani M, Kelishadi MR, Fry H, Kazemi M, Kavian M.</p>
-                <p class="pub-journal"><em>Complementary Therapies in Clinical Practice</em> (2021)</p>
-                <div class="pub-details">
-                    <strong>Contribution:</strong> 2nd Author. Screened articles, validated data, executed standardization, and co-wrote the manuscript draft.
-                </div>
-                <a href="https://doi.org/10.1016/j.ctcp.2021.101349" target="_blank" class="doi-btn"><i class="fas fa-external-link-alt"></i> DOI Link</a>
+            <div class="project-card">
+                <div class="project-status">Academic Prep</div>
+                <h3>Advanced Academic Communication & Collaboration</h3>
+                <p>In preparation for upcoming international research opportunities, I am actively sharpening my academic English writing and presentation skills. I am focusing on cohort-related terminology and high-impact scientific writing paradigms to seamlessly collaborate with global research teams and state public health organizations.</p>
             </div>
         </div>
     </section>
 
-    <!-- Experience & Education -->
-    <section id="experience" class="bg-light">
+    <section id="publications" class="bg-light">
         <div class="container">
             <div class="section-title">
-                <h2>Education & Experience</h2>
+                <h2>Selected Publications (14 Total) </h2>
+                <p>Demonstrated expertise in systematic reviews, dose-response meta-analyses, and clinical data extraction.</p>
             </div>
-            <div class="grid-2">
-                <!-- Education -->
-                <div>
-                    <h3>Education</h3>
-                    <div class="timeline-item">
-                        <h4>BSc in Nutrition and Dietetics Science</h4>
-                        <p class="timeline-meta">Lorestan University of Medical Sciences | 2016 - 2020</p>
-                        <p>GPA: 16.31/20 (3.4/4.0) | Top 1% among 5,000 students. Secretary-General of Nutrition Sciences Student Association.</p>
+
+            <div class="pub-list">
+                <div class="pub-item">
+                    <span class="pub-badge q1">Q1 Journal (IF: 6.0) [cite: 28]</span>
+                    <h4 class="pub-title">The effects of green coffee bean extract on blood pressure and heart rate: A systematic review and dose-response meta-analysis of randomized controlled trials [cite: 26]</h4>
+                    <p class="pub-authors">Samavat S, Ashtary-Larky D, Naeini F, Nazarian B, <strong>Kashkooli S</strong>, Clark CTC, Bagheri R, Asbaghi O, et al. [cite: 26]</p>
+                    <p class="pub-journal"><em>Diabetes & Metabolic Syndrome: Clinical Research & Reviews</em> (2024) [cite: 27]</p>
+                    <div class="pub-details">
+                        <strong>Contribution:</strong> 5th Author. Handled article screening, extracted numerical data, performed standardization and subgroup analyses[cite: 29].
                     </div>
+                    <a href="https://doi.org/10.1016/j.dsx.2024.103120" target="_blank" class="doi-btn"><i class="fas fa-external-link-alt"></i> DOI Link</a>
                 </div>
-                <!-- Clinical Experience -->
-                <div>
-                    <h3>Clinical Practice</h3>
-                    <div class="timeline-item">
-                        <h4>Diet Therapist & Nutritional Consultant</h4>
-                        <p class="timeline-meta">Sina & Shohada Hospitals, Private Practice | 2020 - Present</p>
-                        <p>Over 4 years of clinical experience in hospitals, designing Medical Nutrition Therapy (MNT) protocols for chronic patients, metabolic syndromes, and healthy aging.</p>
+
+                <div class="pub-item">
+                    <span class="pub-badge q1">Q1 Journal (IF: 8.8) [cite: 48]</span>
+                    <h4 class="pub-title">Effects of betaine supplementation on cardiovascular markers: A systematic review and Meta-analysis [cite: 45, 46]</h4>
+                    <p class="pub-authors">Ashtary-Larky D, Bagheri R, Ghanavati M, Asbaghi O, <strong>Kashkooli S</strong>, Tinsley GM, et al. [cite: 45]</p>
+                    <p class="pub-journal"><em>Critical Reviews in Food Science and Nutrition</em> (2022) [cite: 47]</p>
+                    <div class="pub-details">
+                        <strong>Contribution:</strong> 5th Author. Involved in systematic literature searching, data extraction, and managing the database in Excel[cite: 49].
                     </div>
+                    <a href="https://doi.org/10.1080/10408398.2021.1902938" target="_blank" class="doi-btn"><i class="fas fa-external-link-alt"></i> DOI Link</a>
+                </div>
+
+                <div class="pub-item">
+                    <span class="pub-badge q1">Q1 Journal (IF: 3.5) [cite: 73]</span>
+                    <h4 class="pub-title">The effect of green coffee bean extract supplementation on liver function and inflammatory biomarkers: A meta-analysis of randomized clinical trials [cite: 70, 71]</h4>
+                    <p class="pub-authors">Asbaghi O, <strong>Kashkooli S</strong>, Mardani M, Kelishadi MR, Fry H, Kazemi M, Kavian M. [cite: 70]</p>
+                    <p class="pub-journal"><em>Complementary Therapies in Clinical Practice</em> (2021) [cite: 72]</p>
+                    <div class="pub-details">
+                        <strong>Contribution:</strong> 2nd Author. Screened articles, validated data, executed standardization, and co-wrote the manuscript draft[cite: 74].
+                    </div>
+                    <a href="https://doi.org/10.1016/j.ctcp.2021.101349" target="_blank" class="doi-btn"><i class="fas fa-external-link-alt"></i> DOI Link</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Scientific Blog Posts (Academic Content) -->
-    <section id="blog" class="container">
+    <section id="experience" class="container">
         <div class="section-title">
-            <h2>Scientific Articles & Methodology Insights</h2>
-            <p>My latest perspectives on nutritional epidemiology, programming, and metadata standards.</p>
+            <h2>Education & Experience</h2>
         </div>
-        <div class="blog-grid">
-            <!-- Post 1: Python and Meta-Analysis -->
-            <article class="blog-card">
-                <div class="blog-meta">Programming in Science</div>
-                <h3>Automating Unit Standardization for Meta-Analyses Using Python</h3>
-                <p class="blog-excerpt">Extracting data from clinical trials often presents researchers with diverse reporting units (e.g., mg/dL vs. mmol/L). In this article, I discuss how to build custom Python pipelines with Pandas and NumPy to automate units standardization...</p>
-                <div class="blog-full-content">
-                    <p>When executing systematic reviews, one of the most tedious steps is manual unit conversion. Leveraging my programming background, I developed a lightweight script that standardizes biochemical marker data extracted from diverse studies automatically.</p>
-                    <pre><code>def standardize_lipid_units(value, unit, analyte):
+        <div class="grid-2">
+            <div>
+                <h3>Education</h3>
+                <div class="timeline-item">
+                    <h4>BSc in Nutrition and Dietetics Science [cite: 1, 12]</h4>
+                    <p class="timeline-meta">Lorestan University of Medical Sciences | 2016 - 2020 [cite: 13]</p>
+                    <p>GPA: 16.31/20 (3.4/4.0) [cite: 14] | Top 1% among 5,000 students[cite: 123]. Secretary-General of Nutrition Sciences Student Association[cite: 124].</p>
+                </div>
+            </div>
+            <div>
+                <h3>Clinical Practice</h3>
+                <div class="timeline-item">
+                    <h4>Diet Therapist & Nutritional Consultant</h4>
+                    <p class="timeline-meta">Sina & Shohada Hospitals, Private Practice | 2020 - Present [cite: 17, 20, 22, 23]</p>
+                    <p>Over 4 years of clinical experience in hospitals, designing Medical Nutrition Therapy (MNT) protocols for chronic patients, metabolic syndromes, and healthy aging[cite: 7, 21, 134].</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog" class="bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Scientific Articles & Methodology Insights</h2>
+                <p>My latest perspectives on nutritional epidemiology, programming, and metadata standards.</p>
+            </div>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-meta">Programming in Science</div>
+                    <h3>Automating Unit Standardization for Meta-Analyses Using Python</h3>
+                    <p class="blog-excerpt">Extracting data from clinical trials often presents researchers with diverse reporting units (e.g., mg/dL vs. mmol/L). In this article, I discuss how to build custom Python pipelines with Pandas and NumPy to automate unit standardization...</p>
+                    <div class="blog-full-content">
+                        <p>When executing systematic reviews, one of the most tedious steps is manual unit conversion. Leveraging my programming background, I developed a lightweight script that standardizes biochemical marker data extracted from diverse studies automatically.</p>
+                        <pre><code>def standardize_lipid_units(value, unit, analyte):
     if analyte == "cholesterol" and unit == "mg/dL":
         return value * 0.02586  # convert to mmol/L
     return value</code></pre>
-                    <p>Implementing this workflow reduces data-entry errors and accelerates high-impact research, a practice I applied across my 14 publications.</p>
-                </div>
-                <button class="read-more-btn">Read Full Article</button>
-            </article>
+                        <p>Implementing this workflow reduces data-entry errors and accelerates high-impact research, a practice I applied across my 14 publications.</p>
+                    </div>
+                    <button class="read-more-btn">Read Full Article</button>
+                </article>
 
-            <!-- Post 2: Cohort studies & Aging -->
-            <article class="blog-card">
-                <div class="blog-meta">Nutritional Epidemiology</div>
-                <h3>The Imperative of Long-term Cohorts in Healthy Ageing</h3>
-                <p class="blog-excerpt">Clinical trials provide isolated insights, but to understand the trajectory of healthy aging, nutritional epidemiology must rely on prospective, large-scale cohorts. How do cumulative diet patterns impact lifespan?...</p>
-                <div class="blog-full-content">
-                    <p>To tackle chronic metabolic conditions, we must move beyond short-term interventions. Cohorts such as the UK Biobank allow us to study the interactions of lifestyle and biology across decades. Understanding diet as a longitudinal exposure is key to shifting public policy from reactive disease management to proactive prevention.</p>
-                </div>
-                <button class="read-more-btn">Read Full Article</button>
-            </article>
+                <article class="blog-card">
+                    <div class="blog-meta">Nutritional Epidemiology</div>
+                    <h3>The Imperative of Long-term Cohorts in Healthy Ageing</h3>
+                    <p class="blog-excerpt">Clinical trials provide isolated insights, but to understand the trajectory of healthy aging, nutritional epidemiology must rely on prospective, large-scale cohorts. How do cumulative diet patterns impact lifespan?...</p>
+                    <div class="blog-full-content">
+                        <p>To tackle chronic metabolic conditions, we must move beyond short-term interventions. Cohorts allow us to study the interactions of lifestyle and biology across decades. Understanding diet as a longitudinal exposure is key to shifting public policy from reactive disease management to proactive prevention.</p>
+                    </div>
+                    <button class="read-more-btn">Read Full Article</button>
+                </article>
 
-            <!-- Post 3: Diet-Gene Interactions -->
-            <article class="blog-card">
-                <div class="blog-meta">Nutrigenetics</div>
-                <h3>Bridging the Gap Between Diet-Gene Interactions and Public Health</h3>
-                <p class="blog-excerpt">Are general dietary guidelines truly effective? This post reviews how polymorphisms (such as FTO) influence individuals' metabolic responses and why personalized clinical trials are the future of epidemiology...</p>
-                <div class="blog-full-content">
-                    <p>Nutrigenetics represents the frontier of modern preventive medicine. My early literature work on <em>FTO polymorphism</em> showed clear modulations in Leptin levels. Integrating genomics into large epidemiology frameworks will define the next generation of precise clinical diets.</p>
-                </div>
-                <button class="read-more-btn">Read Full Article</button>
-            </article>
+                <article class="blog-card">
+                    <div class="blog-meta">Nutrigenetics</div>
+                    <h3>Bridging the Gap Between Diet-Gene Interactions and Public Health</h3>
+                    <p class="blog-excerpt">Are general dietary guidelines truly effective? This post reviews how polymorphisms (such as FTO) influence individuals' metabolic responses and why personalized clinical trials are the future of epidemiology...</p>
+                    <div class="blog-full-content">
+                        <p>Nutrigenetics represents the frontier of modern preventive medicine. My early literature work on <em>FTO polymorphism</em> showed clear modulations in Leptin levels[cite: 113]. Integrating genomics into large epidemiology frameworks will define the next generation of precise clinical diets.</p>
+                    </div>
+                    <button class="read-more-btn">Read Full Article</button>
+                </article>
+            </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="bg-dark">
         <div class="container text-center">
             <h2>Let's Collaborate</h2>
